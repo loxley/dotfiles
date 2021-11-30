@@ -1,0 +1,52 @@
+[user]
+    name = Johan Sandström
+    email = loxley@users.noreply.github.com
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[core]
+    editor = vim
+    quotepath = false
+[pager]
+    log = /usr/share/git/diff-highlight/diff-highlight | less
+    show = /usr/share/git/diff-highlight/diff-highlight | less
+    diff = /usr/share/git/diff-highlight/diff-highlight | less
+[alias]
+    lg = log --graph --decorate
+    lga = log --graph --decorate --all
+    lgo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lgoa = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+    lgs = log --stat --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    log-fetched = log --oneline HEAD..origin/master
+    log-local = log --oneline origin..HEAD
+    log-refs = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
+    log-timeline = log --format='%h %an %ar - %s'
+    #log-today = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+    log-today = log --stat --since='1 Day Ago' --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    st = status -sb
+    ci = commit
+    ca = commit --amend -C HEAD
+    br = branch
+    co = checkout
+    df = diff
+    dfc = diff --cached
+    a = add -p -v
+    ls = ls-files
+    cl = clone
+    sh = show --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    wip = !"git add -vA; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+    unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"	
+    staged = diff --staged
+    unstage = reset HEAD
+    #fixup ="!f(){ git reset --soft HEAD~${1} && git commit --amend -C HEAD; };f"
+    fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+[push]
+	default = simple
+[credential]
+	helper = cache --timeout=3600
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
