@@ -50,10 +50,10 @@ Plug 'vim-airline/vim-airline-themes'
 " https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-fugitive'
 
-"" Enforce editor settings
-"" https://github.com/editorconfig/editorconfig-vim
-"Plug 'editorconfig/editorconfig-vim'
-"
+" Enforce editor settings
+" https://github.com/editorconfig/editorconfig-vim
+Plug 'editorconfig/editorconfig-vim'
+
 "" Make vim a first class Go development environment
 "" https://github.com/fatih/vim-go
 "Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
