@@ -22,6 +22,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'pbrisbin/vim-colors-off'
 "Plug 'muellan/am-colors'
 "Plug 'blueshirts/darcula'
+Plug 'bluz71/vim-moonfly-colors'
 
 " NERD Tree - tree explorer
 " https://github.com/scrooloose/nerdtree
@@ -52,7 +53,7 @@ Plug 'tpope/vim-fugitive'
 
 " Enforce editor settings
 " https://github.com/editorconfig/editorconfig-vim
-Plug 'editorconfig/editorconfig-vim'
+"Plug 'editorconfig/editorconfig-vim'
 
 "" Make vim a first class Go development environment
 "" https://github.com/fatih/vim-go
@@ -112,10 +113,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 "" To update: :PlugUpdate fzf
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
-"
-"" indentline
-"" https://github.com/Yggdroot/indentLine
-"Plug 'Yggdroot/indentLine'
+
+" indentline
+" https://github.com/Yggdroot/indentLine
+Plug 'Yggdroot/indentLine'
 
 " -------------------------------------
 " Add plugins to &runtimepath
@@ -144,14 +145,20 @@ set nocompatible
 set vb t_vb=
 
 " Set tabs and indents (for go)
-set ts=8
-set shiftwidth=8
-set ai sw=8
+"set ts=8
+"set shiftwidth=8
+"set ai sw=8
+set autoindent
+
 " replace tab with spaces
 "set expandtab
 " allow cursor to move to beginning of tab
 " will interfere with soft line wrapping (set nolist)
-set list lcs=tab:\ \ 
+"set list lcs=tab:\|\ 
+
+" Display different types of white spaces.
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " highlight matches when searching
 " Use C-l to clear (see key map section)
@@ -194,12 +201,31 @@ set wildmenu wildmode=full
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
+" indentline color and char
+let g:indentLine_defaultGroup = 'Whitespace'
+let g:indentLine_char = '▏'
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 " auto switch current working directory to current buffer (not recommended)
 "autocmd BufEnter * :cd %:p:h
 
 " open new split panes to right and below (as you probably expect)
 set splitright
 set splitbelow
+
+" folding disabled
+set nofoldenable
+
+" Search case insensitive...
+set ignorecase
+" ... but not it begins with upper case
+set smartcase
+
+" This enables us to undo files even if you exit Vim.
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.vim/tmp/undo//
+endif
 
 " Use Ag (the silver searcher) instack of Ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -238,7 +264,7 @@ function! Dark()
     set bg=dark
     colorscheme moonfly
     "darcula fix to hide the indents:
-    set nolist
+    "set nolist
 endfunction
 
 function! ToggleLightDark()
@@ -330,7 +356,7 @@ nnoremap <silent> <leader>bv :vnew<CR>
 
 " redraw screan and clear search highlighted items
 "http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting#answer-25569434
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+"nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 " vimux
 " https://raw.githubusercontent.com/benmills/vimux/master/doc/vimux.txt
@@ -408,14 +434,24 @@ au FileType go nnoremap <Leader>i <Plug>(go-info)
 au FileType go nnoremap <Leader>gl <Plug>(go-metalinter)
 au FileType go nnoremap <Leader>gc <Plug>(go-callers)
 
+" https://github.com/fatih/vim-go-tutorial/blob/master/vimrc
+augroup go
+  autocmd!
+
+  " Show by default 4 spaces for a tab
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
+
 " =====================================
 " vim-airline status
 " configure: https://github.com/vim-airline/vim-airline#user-content-extensible-pipeline
 " =====================================
-let g:airline_theme='lucius'
+"let g:airline_theme='lucius'
+let g:airline_theme='moonfly'
 let g:airline_powerline_fonts = 1
 " show buffers (if only one tab)
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let s:hidden_all = 0
 function! ToggleHiddenAll()
