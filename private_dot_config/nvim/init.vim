@@ -166,8 +166,8 @@ set hlsearch
 
 " Line numbering
 " Toggle set to ';n' in key map section
-set nonumber
-"set number relativenumber
+"set nonumber
+set number relativenumber
 
 " Disable line wrapping
 " Toggle set to ';w' in key map section
@@ -187,8 +187,10 @@ filetype indent on
 " syntax highlighting
 syntax on
 
-" scroll a bit horizontally when at the end of the line
-set sidescroll=6
+" Always show at least five line above/below the cursor.
+set scrolloff=5
+" Always show at least five chars left/right of the cursor.
+set sidescrolloff=5
 
 " Make it easier to work with buffers
 " http://vim.wikia.com/wiki/Easier_buffer_switching
@@ -220,6 +222,9 @@ set nofoldenable
 set ignorecase
 " ... but not it begins with upper case
 set smartcase
+
+" Use system clipboard
+set clipboard=unnamedplus
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
@@ -307,6 +312,14 @@ nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
 " use ;; for escape
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
 inoremap ;; <Esc>
+
+"inoremap " ""<left>
+"inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " Toggle NERDTree
 " Can't get <C-Space> by itself to work, so this works as Ctrl - space - space
@@ -403,7 +416,7 @@ let g:ctrlp_cmd = 'CtrlPTag'
 let g:ctrlp_working_path_mode = ''
 
 " toggle colors to optimize based on light or dark background
-nnoremap <leader>c :call ToggleLightDark()<CR>
+"nnoremap <leader>c :call ToggleLightDark()<CR>
 
 """"""""""""""""""""""""""" gutentags settings """"""""""""""""""""""""""""""
 " The path to store tags files, instead of in the project root.
@@ -481,7 +494,7 @@ function! ToggleHiddenAll()
     endif
 endfunction
 
-nnoremap <silent> <leader>h :call ToggleHiddenAll()<CR>
+"nnoremap <silent> <leader>h :call ToggleHiddenAll()<CR>
 
 " =====================================
 " Custom find
