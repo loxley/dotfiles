@@ -92,6 +92,9 @@ local spotify_widget = require("spotify")
 local spotify_play_icon = '/home/loxley/.local/share/icons/Tela-dark/24/actions/player_play.svg'
 local spotify_pause_icon = '/home/loxley/.local/share/icons/Tela-dark/24/actions/player_pause.svg'
 
+-- Net speed (modified awesome-wm-widgets)
+local net_speed_widget = require("net-speed")
+
 -- Clock
 local clockicon = wibox.widget.textbox(
 	string.format('<span color="%s" font="'..theme.icon_font..'"> </span>', theme.clr.purple)
@@ -462,6 +465,20 @@ function theme.at_screen_connect(s)
 	    	{ -- Right widgets
 	    		{
 	    			layout = wibox.layout.fixed.horizontal,
+	    			{
+	    				{
+	    					layout = wibox.layout.fixed.horizontal,
+	    					half_spr,
+	    					net_speed_widget({
+						    width = 50,
+						}),
+	    					half_spr,
+	    				},
+	    				bg = theme.bg_light,
+	    				shape = gears.shape.rounded_rect,
+	    				widget = wibox.container.background,
+	    			},
+	    			half_spr,
 	    			{
 	    				{
 	    					layout = wibox.layout.fixed.horizontal,
