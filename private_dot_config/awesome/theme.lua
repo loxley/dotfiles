@@ -469,20 +469,6 @@ function theme.at_screen_connect(s)
 	    				{
 	    					layout = wibox.layout.fixed.horizontal,
 	    					half_spr,
-	    					net_speed_widget({
-						    width = 50,
-						}),
-	    					half_spr,
-	    				},
-	    				bg = theme.bg_light,
-	    				shape = gears.shape.rounded_rect,
-	    				widget = wibox.container.background,
-	    			},
-	    			half_spr,
-	    			{
-	    				{
-	    					layout = wibox.layout.fixed.horizontal,
-	    					half_spr,
 	    					cpuicon,
 	    					cpu,
 	    					half_spr,
@@ -504,7 +490,21 @@ function theme.at_screen_connect(s)
 	    				shape = gears.shape.rounded_rect,
 	    				widget = wibox.container.background,
 	    			},
-                    half_spr,
+				half_spr,
+	    			{
+	    				{
+	    					layout = wibox.layout.fixed.horizontal,
+	    					half_spr,
+	    					net_speed_widget({
+						    width = 50,
+						}),
+	    					half_spr,
+	    				},
+	    				bg = theme.bg_light,
+	    				shape = gears.shape.rounded_rect,
+	    				widget = wibox.container.background,
+	    			},
+	    			half_spr,
 	    		},
 	    		widget = wibox.container.margin,
 	    	},
