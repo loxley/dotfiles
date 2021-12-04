@@ -226,6 +226,9 @@ set smartcase
 " Use system clipboard
 set clipboard=unnamedplus
 
+" Set conceallevel to show all
+set conceallevel=0
+
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
   set undofile
@@ -370,6 +373,11 @@ nnoremap <silent> <leader>bv :vnew<CR>
 " redraw screan and clear search highlighted items
 "http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting#answer-25569434
 "nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+
+" use double-Esc to completely clear the search buffer
+nnoremap <silent> <Esc><Esc> :let @/ = ""<CR>
+" use space to retain the search buffer and toggle highlighting off/on
+"nnoremap <silent> <Space> :set hlsearch!<CR>
 
 " vimux
 " https://raw.githubusercontent.com/benmills/vimux/master/doc/vimux.txt
@@ -526,6 +534,10 @@ autocmd WinEnter * setlocal cursorline
 autocmd BufLeave * setlocal nocursorline
 autocmd WinLeave * setlocal nocursorline
 
+" Set conceallevel=0 to show all
+autocmd BufEnter * set conceallevel=0
+"autocmd BufEnter * set concealcursor=n
+
 " tagbar autopen
 "autocmd VimEnter * nested :call tagbar#autoopen(1)
 "autocmd FileType * nested :call tagbar#autoopen(0)
@@ -544,6 +556,11 @@ au BufReadPost *
 	\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
 	\ |   exe "normal! g`\""
 	\ | endif
+
+" enable true colors (24-bit colors)
+if has('termguicolors')
+  set termguicolors
+endif
 
 " =====================================
 " Init
