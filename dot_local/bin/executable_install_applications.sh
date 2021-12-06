@@ -15,8 +15,11 @@ apps=(
   "blueman"                          # bluetooth manager
   "brave-bin"                        # safer browsing
   "chezmoi"                          # manages my dotfiles and ssh keys
+  "dive-bin"                         # explore docker layers
   "dnsutils"                         # dnsutils like dig, host etc.
+  "duf"                              # disk usage/free utility
   "exa"                              # colored ls
+  "fd"                               # "find" for files
   "flameshot"                        # screenshot tool
   "foliate"                          # ebook reader
   "git"                              # git
@@ -26,12 +29,14 @@ apps=(
   "hypnotix"                         # iptv app
   "jq"                               # jq cli
   "neovim"                           # ditched vim for neovim
+  "k9s"                              # view/manage k8s clusters
   "kubectl"                          # kubectl
   "kubectx"                          # kubectx
   "lscolors-git"                     # colored shell
   "lxappearance"                     # lxappearance
   "mtr"                              # traceroute and ping
   "nitrogen"                         # nitrogen wallpaper manager
+  "ncdu"                             # disk space info (a better du)
   "nmap"                             # nmap - network discovery / portscan
   "pavucontrol"                      # pulseaudio vol control
   "picom-git"                        # composito
