@@ -1,0 +1,21 @@
+#!/bin/sh
+
+MULLVAD=$(nmcli connection show --active | grep wireguard | cut -d ' ' -f1)
+
+case $MULLVAD in
+    "mullvad-se1")
+        echo "mullvad-se1 found, switching to mullvad-se1-ikea"
+        nmcli connection down mullvad-se1 && nmcli connection up mullvad-se1-ikea
+        ;;
+
+    "mullvad-se1-ikea")
+        echo "mullvad-se1-ikea found, switching to mullvad-se1"
+        # nmcli connection down mullvad-se1-ikea && nmcli connection up mullvad-se1
+        nmcli connection down mullvad-se1-ikea
+        ;;
+    *)
+        echo "none found, starting mullvad-se1"
+        nmcli connection up mullvad-se1
+        ;;
+esac
+
