@@ -11,24 +11,13 @@
 call plug#begin('~/.vim/plugged')
 " -------------------------------------
 
-" various color schemes (neovim default is 'dark'; I like 'slate' with dark background)
-" http://vimcolors.com/
-"Plug 'freeo/vim-kalisi'
-"Plug 'w0ng/vim-hybrid'
-"Plug 'bitterjug/vim-colors-bitterjug'
-"Plug 'jonathanfilip/vim-lucius'
-"Plug 'crusoexia/vim-monokai'
-"Plug 'jacoborus/tender.vim'
-"Plug 'pbrisbin/vim-colors-off'
-"Plug 'muellan/am-colors'
-"Plug 'blueshirts/darcula'
+" colorscheme vim-moonfly-colors (https://github.com/bluz71/vim-moonfly-colors)
+" more themes at https://vimcolorschemes.com/
 Plug 'bluz71/vim-moonfly-colors'
 
 " NERD Tree - tree explorer
-" https://github.com/scrooloose/nerdtree
-" http://usevim.com/2012/07/18/nerdtree/
+" https://github.com/preservim/nerdtree
 " (loaded on first invocation of the command)
-"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " nerdtree-git-plugin - show git status in NERD Tree
@@ -53,7 +42,7 @@ Plug 'tpope/vim-fugitive'
 
 " Enforce editor settings
 " https://github.com/editorconfig/editorconfig-vim
-"Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 "" Make vim a first class Go development environment
 "" https://github.com/fatih/vim-go
@@ -144,17 +133,16 @@ set nocompatible
 " Disable beep / flash
 set vb t_vb=
 
-" Set tabs and indents (for go)
-"set ts=8
-"set shiftwidth=8
-"set ai sw=8
-set autoindent
+" Indentation
+set smarttab
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
-" replace tab with spaces
-"set expandtab
-" allow cursor to move to beginning of tab
-" will interfere with soft line wrapping (set nolist)
-"set list lcs=tab:\|\ 
+"set smartindent
+set autoindent
+"set cindent
 
 " Display different types of white spaces.
 set list
@@ -203,10 +191,11 @@ set wildmenu wildmode=full
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
-" indentline color and char
+" indentline color and char - note: this sets conceallevel=2
 let g:indentLine_defaultGroup = 'Whitespace'
 let g:indentLine_char = '▏'
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_fileTypeExclude = ['json'] " exclude json
 
 " auto switch current working directory to current buffer (not recommended)
 "autocmd BufEnter * :cd %:p:h
@@ -225,9 +214,6 @@ set smartcase
 
 " Use system clipboard
 set clipboard=unnamedplus
-
-" Set conceallevel to show all
-set conceallevel=0
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
@@ -534,8 +520,9 @@ autocmd WinEnter * setlocal cursorline
 autocmd BufLeave * setlocal nocursorline
 autocmd WinLeave * setlocal nocursorline
 
-" Set conceallevel=0 to show all
-autocmd BufEnter * set conceallevel=0
+" Set conceallevel=0 to show all - note: this is overridden by indentline
+" plugin
+"autocmd BufEnter * set conceallevel=0
 "autocmd BufEnter * set concealcursor=n
 
 " tagbar autopen
