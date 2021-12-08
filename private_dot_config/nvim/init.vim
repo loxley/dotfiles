@@ -1,116 +1,131 @@
-" Plug (vim-plug) - plugin manager
-" https://github.com/junegunn/vim-plug
-" Basically: after adding a plug, just remember to run 'PlugInstall'
-" This is best with neovim!
-" https://neovim.io/
-" http://nerditya.com/code/guide-to-neovim/
-" Other helpful links:
-" http://learnvimscriptthehardway.stevelosh.com/
-" http://andrewradev.com/2011/08/06/making-vim-pretty-with-custom-colors/
-" =====================================
-call plug#begin('~/.vim/plugged')
-" -------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins - vim-plug (https://github.com/junegunn/vim-plug)
 
-" colorscheme vim-moonfly-colors (https://github.com/bluz71/vim-moonfly-colors)
-" more themes at https://vimcolorschemes.com/
-Plug 'bluz71/vim-moonfly-colors'
+filetype off
 
-" NERD Tree - tree explorer
-" https://github.com/preservim/nerdtree
-" (loaded on first invocation of the command)
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#begin('~/.config/nvim/plugged')
 
-" nerdtree-git-plugin - show git status in NERD Tree
-" https://github.com/Xuyuanp/nerdtree-git-plugin
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" --- Git
+Plug 'tpope/vim-fugitive'                                         " Git plugin with commands 'G<command>'
+Plug 'Xuyuanp/nerdtree-git-plugin'                                " Show git status in NERD Tree
 
-" vim-airline
-" Enhanced statusline
-" https://github.com/vim-airline/vim-airline
-Plug 'vim-airline/vim-airline'
-" https://github.com/vim-airline/vim-airline-themes
-Plug 'vim-airline/vim-airline-themes'
+" --- Navigation
+Plug 'farmergreg/vim-lastplace'                                   " Move cursor to last edit location when reopening files
+Plug 'cskeeters/vim-smooth-scroll'                                " Smooth scroll animation instead of jump
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy file++ searching
+Plug 'junegunn/fzf.vim'                                           " Asynchronous file/tags searcher
 
-"" Save/restore session support
-"" https://github.com/tpope/vim-obsession
-"" tmux users also see: https://github.com/tmux-plugins/tmux-resurrect/blob/master/docs/restoring_vim_and_neovim_sessions.md
-"Plug 'tpope/vim-obsession'
+" --- Visual
+Plug 'bluz71/vim-moonfly-colors'                                  " Moonfly colorscheme
+Plug 'vim-airline/vim-airline'                                    " Airline status/tabline 
+Plug 'vim-airline/vim-airline-themes'                             " Airline themes
+Plug 'airblade/vim-gitgutter'                                     " Shows a git diff in the sign column
+Plug 'majutsushi/tagbar'                                          " Open tag navigation split with :Tagbar
+Plug 'sheerun/vim-polyglot'                                       " Add syntax highlighting for a large range of filetypes
+Plug 'Yggdroot/indentLine'                                        " Display thin lines for code indented with spaces
 
-" Excellent git wrapper
-" https://github.com/tpope/vim-fugitive
-Plug 'tpope/vim-fugitive'
+" --- Behaviour/tools
+Plug 'tpope/vim-sensible'                                         " Sensible vim defaults
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }             " NERD Tree - tree explorer
 
-" Enforce editor settings
-" https://github.com/editorconfig/editorconfig-vim
-Plug 'editorconfig/editorconfig-vim'
-
-"" Make vim a first class Go development environment
-"" https://github.com/fatih/vim-go
-"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-
-" vim-misc
-" https://github.com/xolox/vim-misc
-"Plug 'xolox/vim-misc'
-
-" vim-easytags
-" https://github.com/xolox/vim-easytags
-"Plug 'xolox/vim-easytags'
-
-" vim-gutentags
-" https://github.com/ludovicchabant/vim-gutentags
-" For some reason vim-easytags did not generate tags
-Plug 'ludovicchabant/vim-gutentags'
-
-" Tagbar
-" https://github.com/majutsushi/tagbar
-Plug 'majutsushi/tagbar'
-
-"" https://github.com/nsf/gocode
-"Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-"
-"" deoplete (for gocode completion support)
-"" https://github.com/Shougo/deoplete.nvim
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"
-"" deoplete-go (for gocode completion support)
-"" https://github.com/zchee/deoplete-go
-"Plug 'zchee/deoplete-go', { 'do': 'make'}
-"
-"" Markdown support
-"" https://github.com/plasticboy/vim-markdown
-"Plug 'godlygeek/tabular'
-"Plug 'plasticboy/vim-markdown'
-"
-"" Nice interaction with tmux
-"" https://github.com/benmills/vimux
-"Plug 'benmills/vimux'
+" --- Autocompletion
+Plug 'ludovicchabant/vim-gutentags'                               " Automatically generate ctags on write
 
 " Fuzzy file, buffer, mru, tag, etc finder
 " ctrlp.vim
 " https://github.com/ctrlpvim/ctrlp.vim
 Plug 'ctrlpvim/ctrlp.vim'
 
-"" A better grep (source code aware)
-"" You must install ack on your machine for the plugin to work
-"" sudo apt-get install ack-grep, brew install ack, etc.
-"Plug 'mileszs/ack.vim'
-"
-"" OMG - insanely awesome fuzzy search and blazing fast grep
-"" https://github.com/junegunn/fzf (parent project)
-"" https://github.com/junegunn/fzf.vim (more extensive wrapper)
-"" https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2#.rkhrm332m
-"" To update: :PlugUpdate fzf
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
-
-" indentline
-" https://github.com/Yggdroot/indentLine
-Plug 'Yggdroot/indentLine'
-
-" -------------------------------------
-" Add plugins to &runtimepath
 call plug#end()
-" =====================================
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Initial settings
+
+" Stuff enabled by vim-sensible:
+"  syntax enable                                - Color highlighting
+"  filetype plugin indent on                    - Filetype detection and correct indentation
+"  wildmenu                                     - Show autocomplete in vim command mode
+"  encoding=utf-8                               - Encode as UTF-8
+"  autoread                                     - Autoread file changes (undoable by u)
+"  incsearch                                    - Start searching before pressing enter
+"  <C>-L keybinding                             - For removing search highlight
+"  laststatus=2                                 - Show statusline at all times
+"  scrolloff=1                                  - Always show at least one line above/below the cursor
+"  load matchit.vim                             - Jump between matching tags with %
+"  backspace=2                                  - Delete over newlines, etc.
+"  ruler                                        - Enable line and column display
+
+set vb t_vb=                                    " Disable beep / flash
+set expandtab                                   " Convert tabs into spaces
+set tabstop=4                                   " Visualize tabs as 4 spaces
+set softtabstop=4                               " Tab and backspace whitespace
+set shiftwidth=4                                " Indentation level for autoindent
+set list                                        " Display tabs and white spaces
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.  " Characters to show for the above, below fillchars for space indents
+set fillchars+=vert:\ 
+set number relativenumber                       " Set relative line numbering - toggle with ';n'
+set nowrap                                      " Disable line wrapping - toggle with ';w'
+set noshowmode                                  " Disable showmode since using vim-airline
+set scrolloff=7                                 " Always show at least 7 lines above/below the cursor
+set sidescrolloff=7                             " Always show at least 7 chars left/right of the cursor
+set hidden                                      " Allow switching between buffers - http://vim.wikia.com/wiki/Easier_buffer_switching
+set confirm                                     " Confirm before leaving unsaved buffer
+set autowriteall                                " Write buffers before it is hidden
+set splitright                                  " Split to the right
+set splitbelow                                  " Split below
+set nofoldenable                                " Disable folding
+set ignorecase                                  " Search case insensitive...
+set smartcase                                   " ... but not when it begins with upper case
+set clipboard=unnamedplus                       " Use system clipboard
+set undofile                                    " Keep undo history between sessions
+set undodir=~/.config/nvim/undodir              " Undo directory
+set noswapfile                                  " Turn off swapfile
+set lazyredraw                                  " Do not redraw screens during macros, etc.
+set spellfile=~/.config/nvim/spell/en.utf-8.add " Save valid words to file (used with :set spell)
+set termguicolors                               " Make sure that 256 colors are used
+set bg=dark                                     " Set dark background
+set signcolumn=yes                              " Always show sign column since we use vim-gitgutter
+colorscheme moonfly                             " Moonfly theme
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin settings
+
+" vim-airline status
+let g:airline_theme='moonfly'
+let g:airline_powerline_fonts = 1
+" show buffers (if only one tab)
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" indentline - color and char - note: indentline sets conceallevel=2
+let g:indentLine_defaultGroup = 'Whitespace'
+let g:indentLine_char = '▏'
+let g:indentLine_fileTypeExclude = ['json', 'markdown']
+
+" vim-gitgutter - use nerd fonts icons as signs
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_removed_first_line = ''
+let g:gitgutter_sign_modified_removed = ''
+
+" ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPTag'
+let g:ctrlp_working_path_mode = ''
+
+" vim-gutentags - the path to store tags files, instead of in the project root
+let g:gutentags_cache_dir = stdpath('cache') . '/ctags'
+let g:gutentags_ctags_exclude = ['*.md', '*.html', '*.json', '*.toml', '*.css', '*.js', '*.xml',]
+
+" Use Ag (the silver searcher) instack of Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Auto start NERD tree when opening a directory
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | wincmd p | endif
@@ -123,166 +138,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'NERDTree' | endi
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " =====================================
-" Initial settings
-" =====================================
-
-" Relax file compatibility restriction with original vi
-" (not necessary to set with neovim, but useful for vim)
-set nocompatible
-
-" Disable beep / flash
-set vb t_vb=
-
-" Indentation
-set smarttab
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
-"set smartindent
-set autoindent
-"set cindent
-
-" Display different types of white spaces.
-set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
-
-" highlight matches when searching
-" Use C-l to clear (see key map section)
-set hlsearch
-
-" Line numbering
-" Toggle set to ';n' in key map section
-"set nonumber
-set number relativenumber
-
-" Disable line wrapping
-" Toggle set to ';w' in key map section
-set nowrap
-
-" enable line and column display
-set ruler
-
-"disable showmode since using vim-airline; otherwise use 'set showmode'
-set noshowmode
-
-" file type recognition
-filetype on
-filetype plugin on
-filetype indent on
-
-" syntax highlighting
-syntax on
-
-" Always show at least five line above/below the cursor.
-set scrolloff=5
-" Always show at least five chars left/right of the cursor.
-set sidescrolloff=5
-
-" Make it easier to work with buffers
-" http://vim.wikia.com/wiki/Easier_buffer_switching
-set hidden
-set confirm
-set autowriteall
-set wildmenu wildmode=full
-
-" markdown
-" https://github.com/plasticboy/vim-markdown
-let g:vim_markdown_folding_disabled = 1
-
-" indentline color and char - note: this sets conceallevel=2
-let g:indentLine_defaultGroup = 'Whitespace'
-let g:indentLine_char = '▏'
-"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileTypeExclude = ['json'] " exclude json
-
-" auto switch current working directory to current buffer (not recommended)
-"autocmd BufEnter * :cd %:p:h
-
-" open new split panes to right and below (as you probably expect)
-set splitright
-set splitbelow
-
-" folding disabled
-set nofoldenable
-
-" Search case insensitive...
-set ignorecase
-" ... but not it begins with upper case
-set smartcase
-
-" Use system clipboard
-set clipboard=unnamedplus
-
-" This enables us to undo files even if you exit Vim.
-if has('persistent_undo')
-  set undofile
-  set undodir=~/.vim/tmp/undo//
-endif
-
-" Use Ag (the silver searcher) instack of Ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" =====================================
-" Theme color scheme settings
-" =====================================
-" blue
-" darkblue
-" default
-" delek
-" desert
-" elflord
-" evening
-" koehler
-" morning
-" murphy
-" pablo
-" peachpuff
-" ron
-" shine
-" slate
-" torte
-" zellner
-" -------------------------------------
-
-function! Light()
-    echom "set bg=light"
-    set bg=light
-    colorscheme off
-    set list
-endfunction
-
-function! Dark()
-    echom "set bg=dark"
-    set bg=dark
-    colorscheme moonfly
-    "darcula fix to hide the indents:
-    "set nolist
-endfunction
-
-function! ToggleLightDark()
-  if &bg ==# "light"
-    call Dark()
-  else
-    call Light()
-  endif
-endfunction
-
-" adjustments
-"hi Statement ctermfg=1 guifg=#60BB60
-"hi Constant ctermfg=4
-
-" for macvim
-"
-" Disable scrollbar in gui
-" set scrolloff=9999
-" hide right scrollbar
-set guioptions-=r
-"
-set guifont=Menlo\ Regular:h16
-
-" =====================================
 " key map
 " Understand mapping modes:
 " http://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping#answer-3776182
@@ -291,6 +146,7 @@ set guifont=Menlo\ Regular:h16
 
 " change the leader key from "\" to ";" ("," is also popular)
 let mapleader=";"
+"let mapleader=","
 
 " Shortcut to edit THIS configuration file: (e)dit (c)onfiguration
 nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
@@ -302,21 +158,38 @@ nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
 inoremap ;; <Esc>
 
-"inoremap " ""<left>
-"inoremap ' ''<left>
+" Auto complete these
+inoremap " ""<left>
+inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Surround the visual selection in parenthesis/brackets/etc
+"vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+"vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+"vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+"vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+"vnoremap $q <esc>`>a'<esc>`<i'<esc>
+"vnoremap $e <esc>`>a`<esc>`<i`<esc>
+
+" Map auto complete of (, ", ', [
+"inoremap $1 ()<esc>i
+"inoremap $2 []<esc>i
+"inoremap $3 {}<esc>i
+"inoremap $4 {<esc>o}<esc>O
+"inoremap $q ''<esc>i
+"inoremap $e ""<esc>i
+
 " Toggle NERDTree
 " Can't get <C-Space> by itself to work, so this works as Ctrl - space - space
 " https://github.com/neovim/neovim/issues/3101
 " http://stackoverflow.com/questions/7722177/how-do-i-map-ctrl-x-ctrl-o-to-ctrl-space-in-terminal-vim#answer-24550772
-"nnoremap <C-Space> :NERDTreeToggle<CR>
+nnoremap <C-Space> :NERDTreeToggle<CR>
 "nmap <C-@> <C-Space>
-nnoremap <silent> <Space> :NERDTreeToggle<CR>
+""nnoremap <silent> <Space> :NERDTreeToggle<CR>
 
 " toggle tagbar
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
@@ -336,7 +209,6 @@ nnoremap <C-l> :bn<CR>
 
 " go to previous buffer
 nnoremap <silent> <leader>bp :bp<CR>
-" https://github.com/neovim/neovim/issues/2048
 nnoremap <C-h> :bp<CR>
 
 " close buffer
@@ -365,12 +237,12 @@ nnoremap <silent> <Esc><Esc> :let @/ = ""<CR>
 " use space to retain the search buffer and toggle highlighting off/on
 "nnoremap <silent> <Space> :set hlsearch!<CR>
 
-" vimux
-" https://raw.githubusercontent.com/benmills/vimux/master/doc/vimux.txt
-nnoremap <leader>vc :VimuxPromptCommand<CR>
-nnoremap <leader>vl :VimuxRunLastCommand<CR>
-nnoremap <leader>vq :VimuxCloseRunner<CR>
-nnoremap <leader>vx: VimuxInterruptRunner<CR>
+"" vimux
+"" https://raw.githubusercontent.com/benmills/vimux/master/doc/vimux.txt
+"nnoremap <leader>vc :VimuxPromptCommand<CR>
+"nnoremap <leader>vl :VimuxRunLastCommand<CR>
+"nnoremap <leader>vq :VimuxCloseRunner<CR>
+"nnoremap <leader>vx: VimuxInterruptRunner<CR>
 
 " improved keyboard navigation
 nnoremap <leader>h <C-w>h
@@ -404,18 +276,8 @@ nnoremap <silent> <leader>tv :vnew<CR>:terminal<CR>
 nnoremap <silent> <leader>th :new<CR>:terminal<CR>
 tnoremap <C-x> <C-\><C-n><C-w>q
 
-" ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPTag'
-let g:ctrlp_working_path_mode = ''
-
-" toggle colors to optimize based on light or dark background
-"nnoremap <leader>c :call ToggleLightDark()<CR>
-
-""""""""""""""""""""""""""" gutentags settings """"""""""""""""""""""""""""""
-" The path to store tags files, instead of in the project root.
-let g:gutentags_cache_dir = stdpath('cache') . '/ctags'
-let g:gutentags_ctags_exclude = ['*.md', '*.html', '*.json', '*.toml', '*.css', '*.js', '*.xml',]
+" Grep content of all files
+nnoremap <silent> <leader>/ :Find<CR>
 
 " =====================================
 " Go
@@ -450,47 +312,6 @@ augroup go
 augroup END
 
 " =====================================
-" vim-airline status
-" configure: https://github.com/vim-airline/vim-airline#user-content-extensible-pipeline
-" =====================================
-"let g:airline_theme='lucius'
-let g:airline_theme='moonfly'
-let g:airline_powerline_fonts = 1
-" show buffers (if only one tab)
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-let s:hidden_all = 0
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=0
-        set noshowcmd
-	TagbarClose
-	NERDTreeClose
-        set foldcolumn=10
-
-    else
-	set foldcolumn=0
-        let s:hidden_all = 0
-        set showmode
-        set ruler
-        set laststatus=2 
-        set showcmd
-	NERDTree
-	" NERDTree takes focus, so move focus back to the right
-	" (note: "l" is lowercase L (mapped to moving right)
-	wincmd l
-	TagbarOpen
-
-    endif
-endfunction
-
-"nnoremap <silent> <leader>h :call ToggleHiddenAll()<CR>
-
-" =====================================
 " Custom find
 " =====================================
 " --column: Show column number
@@ -508,9 +329,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " =====================================
 " Custom styling
 " =====================================
-
-" http://stackoverflow.com/questions/9001337/vim-split-bar-styling
-set fillchars+=vert:\ 
 
 " http://vim.wikia.com/wiki/Highlight_current_line
 " http://stackoverflow.com/questions/8750792/vim-highlight-the-whole-current-line
@@ -538,19 +356,19 @@ set completeopt+=noselect
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#use_cache = 1
 
-" Restore last cursor position and marks on open
-au BufReadPost *
-	\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-	\ |   exe "normal! g`\""
-	\ | endif
+" Enable spellchecking in natural language files
+augroup NaturalLanguage
+    autocmd!
+    autocmd BufRead,BufNewFile *.md,*.rst,*.txt setlocal spell spelllang=en_us
+    autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
 
-" enable true colors (24-bit colors)
-if has('termguicolors')
-  set termguicolors
-endif
+" Use word completion when spelling is enabled
+set complete+=kspell
 
 " =====================================
 " Init
 " =====================================
-silent call Dark()
+"autocmd BufEnter * call gitgutter#highlight#linenr_enable()
+autocmd VimEnter * call gitgutter#highlight#linenr_enable()
 autocmd VimEnter * wincmd p
