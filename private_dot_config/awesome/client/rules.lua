@@ -80,15 +80,15 @@ awful.rules.rules = {
 
     -- Lxappearance
     { rule = { class = "Lxappearance" },
-      properties = { screen = 2, tag = " 漣" } },
+      properties = { screen = 2, tag = " 漣 " } },
     
     -- Nitrogen
     { rule = { class = "Nitrogen" },
-      properties = { screen = 2, tag = " 漣" } },
+      properties = { screen = 2, tag = " 漣 " } },
 
     -- Pavucontrol
     { rule = { class = "Pavucontrol" },
-      properties = { screen = 2, tag = " 漣" } },
+      properties = { screen = 2, tag = " 漣 " } },
     
     -- Ristretto
     { rule = { class = "Ristretto" },
@@ -100,7 +100,7 @@ awful.rules.rules = {
     
     -- Seahorse
     { rule = { class = "Seahorse" },
-      properties = { screen = 2, tag = " 漣" } },
+      properties = { screen = 2, tag = " 漣 " } },
 
     -- Signal
     { rule = { class = "Signal" },
