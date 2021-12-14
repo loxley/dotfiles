@@ -14,6 +14,7 @@ apps=(
     "arandr"                           # xrandr gui
     "blueman"                          # bluetooth manager
     "brave-bin"                        # safer browsing
+    "btop"                             # btop++
     "chezmoi"                          # manages my dotfiles and ssh keys
     "dive-bin"                         # explore docker layers
     "dnsutils"                         # dnsutils like dig, host etc.
