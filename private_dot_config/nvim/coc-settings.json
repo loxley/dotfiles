@@ -1,0 +1,37 @@
+{
+  "codeLens.enable": true,
+  "suggest.noselect": false,
+  "diagnostic.errorSign": "💥",
+  "diagnostic.warningSign": "🟡",
+  "diagnostic.infoSign": "💡",
+  "diagnostic.checkCurrentLine": true,
+  //"coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "css",
+    "scss",
+    "javascriptreact",
+    "typescript.tsx",
+    "graphql",
+    "go"
+  ],
+  "javascript.suggestionActions.enabled": false,
+  "coc.preferences.hoverTarget": "float",
+  "python.formatting.provider": "black",
+  "languageserver": {
+  },
+  "go.goplsOptions": {
+    "experimentalPostfixCompletions": true,
+    "semanticTokens": true,
+    "linksInHover": false,
+    "usePlaceholders": true,
+    "staticcheck": true
+  },
+  "tsserver.watchOptions": {
+    "watchFile": "useFsEvents"
+  },
+  "list.source.symbols.excludes": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"]
+}
