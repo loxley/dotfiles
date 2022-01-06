@@ -12,10 +12,14 @@ fi
 apps=(
     "alacritty"                        # my terminal of choice
     "arandr"                           # xrandr gui
+    "bat"                              # cat clone with syntax highlighting and Git integration
+    "bitwarden-cli"                    # command line vault
     "blueman"                          # bluetooth manager
     "brave-bin"                        # safer browsing
     "btop"                             # btop++
     "chezmoi"                          # manages my dotfiles and ssh keys
+    "ctags"                            # generate tag files for source code
+    "curl"                             # transfer a url
     "dive-bin"                         # explore docker layers
     "dnsutils"                         # dnsutils like dig, host etc.
     "duf"                              # disk usage/free utility
@@ -23,26 +27,32 @@ apps=(
     "fd"                               # "find" for files
     "flameshot"                        # screenshot tool
     "foliate"                          # ebook reader
+    "fzf"                              # command-line fuzzy finder
     "git"                              # git
     "github-cli"                       # yep, github cli
+    "git-lfs"                          # git large files in Git repositories
     "helm"                             # helm for k8s
     "htop"                             # hipster top
     "hypnotix"                         # iptv app
     "jq"                               # jq cli
     "neovim"                           # ditched vim for neovim
     "k9s"                              # view/manage k8s clusters
+    "krew-bin"                         # package manager for kubectl plugins
     "kubectl"                          # kubectl
     "kubectx"                          # kubectx
     "lscolors-git"                     # colored shell
     "lxappearance"                     # lxappearance
     "mtr"                              # traceroute and ping
     "ncdu"                             # disk space info (a better du)
+    "neovim"                           # vim fork improved
     "nitrogen"                         # nitrogen wallpaper manager
     "nmap"                             # nmap - network discovery / portscan
     "nvm"                              # node version manager
     "pavucontrol"                      # pulseaudio vol control
     "picom-git"                        # composito
     "python-pipenv"                    # manage python virtualenvs
+    "python-pyotp"                     # python otp lib for aegis-decrypt
+    "python-qrcode"                    # python qr code lib for aegis-decrypt
     "ripgrep"                          # recursive search on steroids
     "ristretto"                        # picture viewer
     "rofi"                             # app launcher
@@ -51,9 +61,11 @@ apps=(
     "sipcalc"                          # subnetting calculator
     "slack-desktop"                    # slack
     "spotify"                          # spotify
+    "syncthing"                        # continuous replication / cluster synchronization thing
     "tailscale"                        # mesh vpn
     "thunar"                           # file manager
     "tumbler"                          # file manager - thumbnail previews
+    "unrar"                            # unrar
     "unzip"                            # unzip
     "visual-studio-code-bin"           # VS Code
     "whois"                            # whois
