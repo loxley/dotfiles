@@ -10,7 +10,7 @@ altkey = "Mod1"
 
 launcher = "rofi -normal-window -show drun -modi drun,ssh -theme /home/loxley/.config/awesome/rofi.rasi"
 screenshot = "flameshot screen -p '/home/loxley/Pictures/screenshots/'"
-screenshot_selection = "flameshot gui -d 1000 -p ~/Pictures/screenshots/"
+screenshot_selection = "flameshot gui -d 1000"
 
 -- Mouse bindings
 root.buttons(gears.table.join(

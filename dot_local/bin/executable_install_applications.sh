@@ -10,6 +10,7 @@ if ! type "paru" > /dev/null; then
 fi
 
 apps=(
+    "base-devel"                       # base-devel
     "alacritty"                        # my terminal of choice
     "arandr"                           # xrandr gui
     "bat"                              # cat clone with syntax highlighting and Git integration
