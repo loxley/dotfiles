@@ -32,7 +32,7 @@ Plug 'vim-airline/vim-airline'                                    " Airline stat
 Plug 'vim-airline/vim-airline-themes'                             " Airline themes
 Plug 'airblade/vim-gitgutter'                                     " Shows a git diff in the sign column
 Plug 'majutsushi/tagbar'                                          " Open tag navigation split with :Tagbar
-Plug 'sheerun/vim-polyglot'                                       " Add syntax highlighting for a large range of filetypes
+"Plug 'sheerun/vim-polyglot'                                       " Add syntax highlighting for a large range of filetypes CURRENTLY BROKEN! https://github.com/sheerun/vim-polyglot/issues/779
 Plug 'Yggdroot/indentLine'                                        " Display thin lines for code indented with spaces
 Plug 'jiangmiao/auto-pairs'                                       " Insert or delete brackets, parens, quotes in pair
 
@@ -306,26 +306,26 @@ nmap <silent> gD <Plug>(coc-declaration)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references-used)
-nmap <silent> gn <Plug>(coc-rename)                   " Symbol renaming.
-nmap <silent> gA <Plug>(coc-codeaction)               " Remap keys for applying codeAction to the current buffer.
+nmap <silent> gn <Plug>(coc-rename)              " Symbol renaming.
+nmap <silent> gA <Plug>(coc-codeaction)          " Remap keys for applying codeAction to the current buffer.
 nmap <silent> gl <Plug>(coc-codeaction-line)
 nmap <silent> ga <Plug>(coc-codeaction-cursor)
-nmap <silent> gk <Plug>(coc-fix-current)              " Apply AutoFix to problem on the current line.
+nmap <silent> gk <Plug>(coc-fix-current)         " Apply AutoFix to problem on the current line.
 
 " multiple cursors
-nmap <silent> <expr> <C-d> <SID>select_current_word()
-nmap <silent> <C-c> <Plug>(coc-cursors-position)
-xmap <silent> <C-d> <Plug>(coc-cursors-range)
+nmap <silent> <expr> <C-d>  <SID>select_current_word()
+nmap <silent> <C-c>         <Plug>(coc-cursors-position)
+xmap <silent> <C-d>         <Plug>(coc-cursors-range)
 
 " format
-nmap <leader>x  <Plug>(coc-cursors-operator)
-nmap <leader>rf <Plug>(coc-refactor)
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>x              <Plug>(coc-cursors-operator)
+nmap <leader>rf             <Plug>(coc-refactor)
+xmap <leader>f              <Plug>(coc-format-selected)
+nmap <leader>f              <Plug>(coc-format-selected)
 
 " codeaction
-xmap <leader>a  <Plug>(coc-codeaction-selected)       " codeaction to selected region ex: `<leader>aap`"
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>a              <Plug>(coc-codeaction-selected) " codeaction to selected region ex: `<leader>aap`"
+nmap <leader>a              <Plug>(coc-codeaction-selected)
 
 " function select
 xmap if <Plug>(coc-funcobj-i)
@@ -352,7 +352,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-vnoremap <silent> K <cmd>call CocActionAsync('doHover')<CR>
+vnoremap <silent> K       <cmd>call CocActionAsync('doHover')<CR>
 
 " Mappings for CoCList
 nnoremap <silent><nowait> <space>o  :<C-u>CocList -A outline -kind<CR>                        " find symbol of current document
@@ -440,6 +440,7 @@ let g:coc_global_extensions = [
       \'coc-lists',
       \'coc-marketplace',
       \'coc-pyright',
+      \'coc-sh',
       \'coc-yank'
       \]
 
