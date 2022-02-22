@@ -10,12 +10,13 @@ if ! type "paru" > /dev/null; then
 fi
 
 apps=(
-    "base-devel"                       # base-devel
+    #"base-devel"                       # base-devel
     "alacritty"                        # my terminal of choice
     "arandr"                           # xrandr gui
     "bat"                              # cat clone with syntax highlighting and Git integration
     "bitwarden-cli"                    # command line vault
     "blueman"                          # bluetooth manager
+    "bluez-utils"                      # bluetooth dev/debug tools
     "brave-bin"                        # safer browsing
     "btop"                             # btop++
     "chezmoi"                          # manages my dotfiles and ssh keys
@@ -34,7 +35,7 @@ apps=(
     "git-lfs"                          # git large files in Git repositories
     "helm"                             # helm for k8s
     "htop"                             # hipster top
-    "hypnotix"                         # iptv app
+    #"hypnotix"                         # iptv app
     "jq"                               # jq cli
     "neovim"                           # ditched vim for neovim
     "k9s"                              # view/manage k8s clusters
@@ -43,40 +44,49 @@ apps=(
     "kubectx"                          # kubectx
     "lscolors-git"                     # colored shell
     "lxappearance"                     # lxappearance
+    "manjaro-pipewire"                 # manjaro pipewire meta package for pipewire support
     "mtr"                              # traceroute and ping
     "ncdu"                             # disk space info (a better du)
     "neovim"                           # vim fork improved
     "nitrogen"                         # nitrogen wallpaper manager
     "nmap"                             # nmap - network discovery / portscan
     "nvm"                              # node version manager
-    "pavucontrol"                      # pulseaudio vol control
+    "pa-applet"                        # pulseaudio applet
+    #"pavucontrol"                      # pulseaudio vol control
     "picom-git"                        # composito
+    "playerctl"                        # playerctl
     "python-pipenv"                    # manage python virtualenvs
     "python-pyotp"                     # python otp lib for aegis-decrypt
     "python-qrcode"                    # python qr code lib for aegis-decrypt
     "ripgrep"                          # recursive search on steroids
     "ristretto"                        # picture viewer
     "rofi"                             # app launcher
-    "seahorse"                         # manage PGP keys
+    "rtkit"                            # realtime policy and watchdog daemon control
+    #"seahorse"                         # manage PGP keys
     "signal-desktop"                   # signal messenger
     "sipcalc"                          # subnetting calculator
     "slack-desktop"                    # slack
     "spotify"                          # spotify
+    "starship"                         # starship prompt
     "syncthing"                        # continuous replication / cluster synchronization thing
     "tailscale"                        # mesh vpn
     "thunar"                           # file manager
+    "thunar-volman"                    # file manager removable devices
     "tumbler"                          # file manager - thumbnail previews
     "unrar"                            # unrar
     "unzip"                            # unzip
+    "v4l-utils"                        # userspace tools for video 4 linux
     "visual-studio-code-bin"           # VS Code
     "whois"                            # whois
     "wireguard-tools"                  # secure network tunnel - tools
     "xclip"                            # clipboard
+    "xdg-user-dirs"                # xdg-user-dirs
+    "xdg-utils"                        # xdg-utils
 
-  # fonts
-  "noto-fonts"                       # google noto ttf fonts
-  "noto-fonts-emoji"                 # google noto ttf fonts emoji characters
-  "ttf-fira-code"                    # fira code font
+    # fonts
+    "noto-fonts"                       # google noto ttf fonts
+    "noto-fonts-emoji"                 # google noto ttf fonts emoji characters
+    "ttf-fira-code"                    # fira code font
 )
 
 counter=0
@@ -89,17 +99,17 @@ done
 echo "$counter apps installed"
 
 # fonts
-#echo "Installing fonts..."
-#
-#echo "Iosevka Regular"
-#wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete.ttf -P ~/.local/share/fonts/
-#
-#echo "Iosevka Regular Mono"
-#wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/ 
-#
-#echo "Source Code Pro (SauceCodePro) Semibold Italic"
-#wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold-Italic/complete/Sauce%20Code%20Pro%20Semibold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf ~/.local/share/fonts/
-#
-#echo "Source Code Pro (SauceCodePro) Semibold Mono"
-#wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
+echo "Installing fonts..."
+
+echo "Iosevka Regular"
+test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete.ttf -P ~/.local/share/fonts/
+
+echo "Iosevka Regular Mono"
+test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/ 
+
+echo "Source Code Pro (SauceCodePro) Semibold Italic"
+test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold-Italic/complete/Sauce%20Code%20Pro%20Semibold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
+
+echo "Source Code Pro (SauceCodePro) Semibold Mono"
+test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
 
