@@ -1,0 +1,48 @@
+add_newline = false
+
+#format = """
+#[┌───────────────────>](bold green)$git_branch
+#[│](bold green)$directory$gcloud$kubernetes
+#[└─>](bold green) """
+
+format = """
+$username$directory$hostname$git_branch$git_commit$git_status$kubernetes$gcloud
+$character"""
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+[git_branch]
+format = '[git:\(](white)[$branch](bold purple)'
+
+[git_commit]
+format = '[\($hash\)](bold green)'
+
+[git_status]
+#ahead = "⇡${count}"
+#diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+#behind = "⇣${count}"
+ahead = "ahead ${count}"
+diverged = "ahead ${ahead_count} behind ${behind_count}"
+behind = "behind ${count}"
+format = '[\[](dimmed red)[$all_status$ahead_behind](bold red)[\]](dimmed red)[\)](white) '
+
+[gcloud]
+format = '[gcp:\(](white)[$project](blue)[\)](white) '
+
+[hostname]
+ssh_only = true
+format = '[@:\(](white)[$hostname](red)[\)](white) '
+
+[kubernetes]
+format = '[k8s:\(](white)[$context](cyan)([\(](dimmed cyan)[$namespace](cyan)[\)](dimmed cyan))[\)](white) '
+disabled = false
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+".*/openshift-cluster/.*" = "openshift"
+"gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
+
+[username]
+format = '[$user]($style) '
+show_always = false
