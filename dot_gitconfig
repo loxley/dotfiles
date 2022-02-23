@@ -7,7 +7,7 @@
     interactive = auto
     status = auto
 [core]
-    editor = vim
+    editor = nvim
     quotepath = false
 [pager]
     log = /usr/share/git/diff-highlight/diff-highlight | less

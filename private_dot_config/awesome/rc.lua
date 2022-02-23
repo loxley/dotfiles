@@ -30,15 +30,18 @@ require'layout'
 
 -- Init
 awful.spawn.with_shell([[
-    ~/.config/awesome/desktop.sh
+    ~/.screenlayout/desktop.sh
     ~/.config/awesome/v4l2.sh
     picom --config ~/.config/picom/picom.conf &
     nitrogen --restore &
     blueman-applet &
     nm-applet &
+    pamac-tray &
+    pa-applet &
     thunar --daemon &
     flameshot &
     xset r rate 460 35 &
     xset s 300 5 &
-    xss-lock -n /usr/lib/xsecurelock/dimmer -l -- ~/.config/awesome/xsecurelock.sh &
+    light-locker &
 ]])
+--xss-lock -n /usr/lib/xsecurelock/dimmer -l -- ~/.config/awesome/xsecurelock.sh &

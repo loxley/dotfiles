@@ -6,7 +6,7 @@ add_newline = false
 #[└─>](bold green) """
 
 format = """
-$username$directory$hostname$git_branch$git_commit$git_status$kubernetes$gcloud
+$username$directory$hostname$git_branch$git_commit$git_status$git_state$kubernetes$gcloud
 $character"""
 
 [character]
@@ -20,13 +20,11 @@ format = '[git:\(](white)[$branch](bold purple)'
 format = '[\($hash\)](bold green)'
 
 [git_status]
-#ahead = "⇡${count}"
-#diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-#behind = "⇣${count}"
-ahead = "ahead ${count}"
-diverged = "ahead ${ahead_count} behind ${behind_count}"
-behind = "behind ${count}"
-format = '[\[](dimmed red)[$all_status$ahead_behind](bold red)[\]](dimmed red)[\)](white) '
+untracked = ''
+ahead = '[\[](dimmed red)ahead ${count}[\]](dimmed red)'
+diverged = '[\[](dimmed red)ahead ${ahead_count} behind ${behind_count}[\]](dimmed red)'
+behind = '[\[](dimmed red)behind ${count}[\]](dimmed red)'
+format = '[$all_status$ahead_behind](bold red)[\)](white) '
 
 [gcloud]
 format = '[gcp:\(](white)[$project](blue)[\)](white) '
