@@ -32,7 +32,7 @@ Plug 'vim-airline/vim-airline'                                    " Airline stat
 Plug 'vim-airline/vim-airline-themes'                             " Airline themes
 Plug 'airblade/vim-gitgutter'                                     " Shows a git diff in the sign column
 Plug 'majutsushi/tagbar'                                          " Open tag navigation split with :Tagbar
-"Plug 'sheerun/vim-polyglot'                                       " Add syntax highlighting for a large range of filetypes CURRENTLY BROKEN! https://github.com/sheerun/vim-polyglot/issues/779
+Plug 'sheerun/vim-polyglot'                                       " Add syntax highlighting for a large range of filetypes
 Plug 'Yggdroot/indentLine'                                        " Display thin lines for code indented with spaces
 Plug 'jiangmiao/auto-pairs'                                       " Insert or delete brackets, parens, quotes in pair
 
