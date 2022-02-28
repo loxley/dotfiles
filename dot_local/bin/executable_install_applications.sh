@@ -55,6 +55,7 @@ apps=(
     #"pavucontrol"                      # pulseaudio vol control
     "picom-git"                        # composito
     "playerctl"                        # playerctl
+    "podman"                           # simple management tool for pods, containers and images
     "python-pipenv"                    # manage python virtualenvs
     "python-pyotp"                     # python otp lib for aegis-decrypt
     "python-qrcode"                    # python qr code lib for aegis-decrypt
