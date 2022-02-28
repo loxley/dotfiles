@@ -1,4 +1,5 @@
 add_newline = false
+#command_timeout = 750
 
 #format = """
 #[┌───────────────────>](bold green)$git_branch
@@ -6,7 +7,7 @@ add_newline = false
 #[└─>](bold green) """
 
 format = """
-$username$directory$hostname$git_branch$git_commit$git_status$git_state$kubernetes$gcloud
+$username$directory$hostname$git_branch$git_commit$git_status$git_state$kubernetes$gcloud$golang$python$terraform$helm
 $character"""
 
 [character]
@@ -29,6 +30,12 @@ format = '[$all_status$ahead_behind](bold red)[\)](white) '
 [gcloud]
 format = '[gcp:\(](white)[$project](blue)[\)](white) '
 
+[golang]
+format = '[go:\(](white)[$version](bold cyan)[\)](white) '
+
+[helm]
+format = '[helm:\(](white)[$version](bold white)[\)](white) '
+
 [hostname]
 ssh_only = true
 format = '[@:\(](white)[$hostname](red)[\)](white) '
@@ -41,6 +48,13 @@ disabled = false
 ".*/openshift-cluster/.*" = "openshift"
 "gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
 
+[python]
+format = '[py:\(](white)[$version](yellow bold)([\(](dimmed yellow)[$virtualenv](yellow bold)[\)](dimmed yellow))[\)](white) '
+
 [username]
 format = '[$user]($style) '
 show_always = false
+
+[terraform]
+format = '[tf:\(](white)[$workspace](bold 105)[\)](white) '
+disabled = true
