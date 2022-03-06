@@ -24,6 +24,7 @@ apps=(
     "curl"                             # transfer a url
     "dive-bin"                         # explore docker layers
     "dnsutils"                         # dnsutils like dig, host etc.
+    "downgrade"                        # downgrade arch linux packages
     "duf"                              # disk usage/free utility
     "exa"                              # colored ls
     "fd"                               # "find" for files
