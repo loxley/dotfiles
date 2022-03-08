@@ -53,6 +53,7 @@ apps=(
     "nmap"                             # nmap - network discovery / portscan
     "nvm"                              # node version manager
     "pa-applet"                        # pulseaudio applet
+    "pamixer"                          # pulseaudio command line mixer
     #"pavucontrol"                      # pulseaudio vol control
     "picom-git"                        # composito
     "playerctl"                        # playerctl
