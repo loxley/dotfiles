@@ -36,8 +36,10 @@ apps=(
     "git-lfs"                          # git large files in Git repositories
     "helm"                             # helm for k8s
     "htop"                             # hipster top
+    "httpie"                           # human-friendly CLI HTTP for the API era
     #"hypnotix"                         # iptv app
     "jq"                               # jq cli
+    "jwt-cli-bin"                      # decode/encode JWTs
     "neovim"                           # ditched vim for neovim
     "k9s"                              # view/manage k8s clusters
     "krew-bin"                         # package manager for kubectl plugins
@@ -51,6 +53,7 @@ apps=(
     "neovim"                           # vim fork improved
     "nitrogen"                         # nitrogen wallpaper manager
     "nmap"                             # nmap - network discovery / portscan
+    "openbsd-netcat"                   # TCP/IP swiss army knife
     "nvm"                              # node version manager
     "pa-applet"                        # pulseaudio applet
     "pamixer"                          # pulseaudio command line mixer
@@ -71,6 +74,7 @@ apps=(
     "slack-desktop"                    # slack
     "spotify"                          # spotify
     "starship"                         # starship prompt
+    "step-cli"                         # plumbing for distributed systems
     "syncthing"                        # continuous replication / cluster synchronization thing
     "tailscale"                        # mesh vpn
     "thunar"                           # file manager
