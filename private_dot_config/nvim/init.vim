@@ -248,6 +248,10 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+" Scroll Control+Up/Down 5 lines
+noremap <C-Up> 5k
+noremap <C-Down> 5j
+
 " Terminal shortcuts
 "nnoremap <silent> <leader>tt :terminal<CR>
 "nnoremap <silent> <leader>tv :vnew<CR>:terminal<CR>
