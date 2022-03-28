@@ -19,6 +19,7 @@ apps=(
     "bluez-utils"                      # bluetooth dev/debug tools
     "brave-bin"                        # safer browsing
     "btop"                             # btop++
+    "chafa"                            # character art facsimile generator
     "chezmoi"                          # manages my dotfiles and ssh keys
     "ctags"                            # generate tag files for source code
     "curl"                             # transfer a url
