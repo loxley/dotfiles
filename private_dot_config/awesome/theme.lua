@@ -43,6 +43,7 @@ theme.bg_light = '#1e222a00' -- '#2c3038'
 theme.bg_systray = theme.bg_normal
 
 theme.hotkeys_fg = '#a6accd'
+theme.hotkeys_bg = '#000000dd'
 theme.hotkeys_modifiers_fg = '#a6accd'
 
 theme.tasklist_bg_normal = '#181828'
