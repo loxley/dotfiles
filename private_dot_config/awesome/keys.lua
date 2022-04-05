@@ -20,7 +20,7 @@ root.buttons(gears.table.join(
 ))
 
 local term_scratch = bling.module.scratchpad {
-    command = "alacritty --class spad",               -- How to spawn the scratchpad
+    command = "alacritty --class spad --title scratchpad", -- How to spawn the scratchpad
     rule = { instance = "spad" },                     -- The rule that the scratchpad will be searched by
     sticky = true,                                    -- Whether the scratchpad should be sticky
     autoclose = true,                                 -- Whether it should hide itself when losing focus
