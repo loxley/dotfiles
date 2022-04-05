@@ -34,3 +34,9 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+[".tfenv"]
+    type = "archive"
+    url = "https://github.com/tfutils/tfenv/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
