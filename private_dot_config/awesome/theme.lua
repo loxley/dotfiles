@@ -42,6 +42,9 @@ theme.bg_urgent = "#081218"
 theme.bg_light = '#1e222a00' -- '#2c3038'
 theme.bg_systray = theme.bg_normal
 
+theme.hotkeys_fg = '#a6accd'
+theme.hotkeys_modifiers_fg = '#a6accd'
+
 theme.tasklist_bg_normal = '#181828'
 theme.tasklist_bg_focus = '#1f1f2f'
 theme.tasklist_bg_urgent = '#1b1b2b'
