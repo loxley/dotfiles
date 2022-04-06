@@ -60,13 +60,29 @@ local globalkeys = gears.table.join(
               {description = "go back", group = "tag"}),
     
     -- Group: Client
-    awful.key({ modkey,           }, "j", function () awful.client.focus.byidx(1)  end,
+    awful.key({ modkey,           }, "j",
+              function ()
+                  awful.client.focus.byidx(1)
+                  bling.module.flash_focus.flashfocus(client.focus)
+              end,
               {description = "focus next by index", group = "client"}),
-    awful.key({ modkey,           }, "k", function () awful.client.focus.byidx(-1) end,
+    awful.key({ modkey,           }, "k",
+              function ()
+                  awful.client.focus.byidx(-1)
+                  bling.module.flash_focus.flashfocus(client.focus)
+              end,
               {description = "focus previous by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1) end,
+    awful.key({ modkey, "Shift"   }, "j",
+              function ()
+                  awful.client.swap.byidx(  1)
+                  bling.module.flash_focus.flashfocus(client.focus)
+              end,
               {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1) end,
+    awful.key({ modkey, "Shift"   }, "k",
+              function ()
+                  awful.client.swap.byidx( -1)
+                  bling.module.flash_focus.flashfocus(client.focus)
+              end,
               {description = "swap with previous client by index", group = "client"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),

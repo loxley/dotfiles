@@ -72,6 +72,9 @@ theme.tasklist_plain_task_name = true
 theme.tasklist_disable_icon = true
 theme.gap_single_client = true
 
+theme.flash_focus_start_opacity = 0.6
+theme.flash_focus_step = 0.01
+
 -- naughty configuration
 theme.notification_border_color = theme.bg_light
 theme.notification_border_width = dpi(5)
