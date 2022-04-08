@@ -96,7 +96,7 @@ set splitbelow                                  " Split below
 set nofoldenable                                " Disable folding
 set ignorecase                                  " Search case insensitive...
 set smartcase                                   " ... but not when it begins with upper case
-set clipboard=unnamedplus                       " Use system clipboard
+set clipboard^=unnamed,unnamedplus                       " Use system clipboard
 set undofile                                    " Keep undo history between sessions
 set undodir=~/.config/nvim/undodir              " Undo directory
 set noswapfile                                  " Turn off swapfile

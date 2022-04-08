@@ -108,6 +108,8 @@ export EDITOR='nvim'
 export TERMINAL='/usr/bin/alacritty'
 
 export HISTORY_IGNORE="(l|ll|la|lt|ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+export HISTSIZE=500000          # the number of items for the internal history list
+export SAVEHIST=500000          # maximum number of items for the history file
 
 setopt HIST_IGNORE_ALL_DUPS     # do not put duplicated command into history list
 setopt HIST_SAVE_NO_DUPS        # do not save duplicated command
