@@ -128,7 +128,7 @@ local globalkeys = gears.table.join(
               {description = "tiling mode (bottom)", group = "layout"}),
 
     -- Group: Launcher
-    awful.key({ modkey, "Shift"   }, "p", function () term_scratch:toggle()         end,
+    awful.key({ modkey,           }, "p", function () term_scratch:toggle()         end,
               {description = "scratchpad", group = "launcher"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn("alacritty") end,
               {description = "open a terminal", group = "launcher"}),
