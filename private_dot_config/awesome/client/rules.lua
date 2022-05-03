@@ -78,6 +78,10 @@ awful.rules.rules = {
     { rule = { class = "Hypnotix.py" },
       properties = { screen = 1, tag = "  " } },
 
+    -- Jellyfin Media Player
+    { rule = { class = "Jellyfin Media Player" },
+      properties = { screen = 1, tag = "  " } },
+
     -- Lxappearance
     { rule = { class = "Lxappearance" },
       properties = { screen = 2, tag = " 漣 " } },
