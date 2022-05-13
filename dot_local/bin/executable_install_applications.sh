@@ -65,6 +65,7 @@ apps=(
     "python-pipenv"                    # manage python virtualenvs
     "python-pyotp"                     # python otp lib for aegis-decrypt
     "python-qrcode"                    # python qr code lib for aegis-decrypt
+    "rclone"                           # manage files on cloud storage
     "ripgrep"                          # recursive search on steroids
     "ristretto"                        # picture viewer
     "rofi"                             # app launcher
