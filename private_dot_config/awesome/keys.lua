@@ -149,8 +149,8 @@ local globalkeys = gears.table.join(
         end,
         {description = "take screenshot", group = "launcher"}),
 
-    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("backlight_control +10") end),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("backlight_control -10") end),
+    awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 10") end),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end),
 
     awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pamixer -i +5") end),
     awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pamixer -d 5") end),
