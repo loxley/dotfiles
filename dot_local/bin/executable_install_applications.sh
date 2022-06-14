@@ -36,6 +36,8 @@ apps=(
     "git"                              # git
     "github-cli"                       # yep, github cli
     "git-lfs"                          # git large files in Git repositories
+    "gtk-engines"                      # theme engines for GTK+ 2
+    "gtk-engine-murrine"               # murrina engine
     "helm"                             # helm for k8s
     "htop"                             # hipster top
     "httpie"                           # human-friendly CLI HTTP for the API era
