@@ -71,8 +71,8 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "  " } },
 
     -- GoLand
-    { rule = { class = "jetbrains-goland" },
-      properties = { screen = 2, tag = "  " } },
+    --{ rule = { class = "jetbrains-goland" },
+    --  properties = { screen = 2, tag = "  " } },
 
     -- Hypnotix
     { rule = { class = "Hypnotix.py" },
@@ -83,16 +83,16 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "  " } },
 
     -- Lxappearance
-    { rule = { class = "Lxappearance" },
-      properties = { screen = 2, tag = " 漣 " } },
+    --{ rule = { class = "Lxappearance" },
+    --  properties = { screen = 2, tag = " 漣 " } },
     
     -- Nitrogen
-    { rule = { class = "Nitrogen" },
-      properties = { screen = 2, tag = " 漣 " } },
+    --{ rule = { class = "Nitrogen" },
+    --  properties = { screen = 2, tag = " 漣 " } },
 
     -- Pavucontrol
-    { rule = { class = "Pavucontrol" },
-      properties = { screen = 2, tag = " 漣 " } },
+    --{ rule = { class = "Pavucontrol" },
+    --  properties = { screen = 2, tag = " 漣 " } },
     
     -- Ristretto
     { rule = { class = "Ristretto" },
