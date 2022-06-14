@@ -33,6 +33,7 @@ awful.spawn.with_shell([[
     ~/.screenlayout/desktop.sh
     ~/.config/awesome/v4l2.sh
     picom --config ~/.config/picom/picom.conf &
+    xfce4-power-manager &
     nitrogen --restore &
     blueman-applet &
     nm-applet &
