@@ -10,6 +10,7 @@ if ! type "paru" > /dev/null; then
 fi
 
 apps=(
+    #"acpilight"                        # backlight control for thinkpad t14
     #"base-devel"                       # base-devel
     "alacritty"                        # my terminal of choice
     "arandr"                           # xrandr gui
@@ -23,7 +24,7 @@ apps=(
     "chezmoi"                          # manages my dotfiles and ssh keys
     "ctags"                            # generate tag files for source code
     "curl"                             # transfer a url
-    "dive-bin"                         # explore docker layers
+    #"dive-bin"                         # explore docker layers
     "dnsutils"                         # dnsutils like dig, host etc.
     "downgrade"                        # downgrade arch linux packages
     "duf"                              # disk usage/free utility
@@ -40,12 +41,13 @@ apps=(
     "httpie"                           # human-friendly CLI HTTP for the API era
     #"hypnotix"                         # iptv app
     "jq"                               # jq cli
-    "jwt-cli-bin"                      # decode/encode JWTs
+    "jwt-cli"                          # decode/encode JWTs
     "neovim"                           # ditched vim for neovim
     "k9s"                              # view/manage k8s clusters
     "krew-bin"                         # package manager for kubectl plugins
     "kubectl"                          # kubectl
     "kubectx"                          # kubectx
+    "light-locker"                     # screen locker
     "lscolors-git"                     # colored shell
     "lxappearance"                     # lxappearance
     "manjaro-pipewire"                 # manjaro pipewire meta package for pipewire support
@@ -74,6 +76,7 @@ apps=(
     "signal-desktop"                   # signal messenger
     "sipcalc"                          # subnetting calculator
     "slack-desktop"                    # slack
+    #"sof-firmware"                     # Sound Open firmare for thinkapd t14
     "spotify"                          # spotify
     "starship"                         # starship prompt
     "step-cli"                         # plumbing for distributed systems
@@ -91,6 +94,7 @@ apps=(
     "xclip"                            # clipboard
     "xdg-user-dirs"                # xdg-user-dirs
     "xdg-utils"                        # xdg-utils
+    #"xfce4-power-manager"              # xfce power manager
 
     # fonts
     "noto-fonts"                       # google noto ttf fonts
@@ -106,6 +110,9 @@ for app in "${apps[@]}"; do
     paru -Qi $app | grep ^Name || yes | paru --skipreview -S $app
 done
 echo "$counter apps installed"
+
+echo "Running xdg-user-dirs-update..."
+xdg-user-dirs-update
 
 # fonts
 echo "Installing fonts..."
