@@ -56,6 +56,7 @@ apps=(
     "mtr"                              # traceroute and ping
     "ncdu"                             # disk space info (a better du)
     "neovim"                           # vim fork improved
+    "networkmanager-openconnect"       # networkmanager vpn plugin for openconnect
     "nitrogen"                         # nitrogen wallpaper manager
     "nmap"                             # nmap - network discovery / portscan
     "openbsd-netcat"                   # TCP/IP swiss army knife
@@ -65,6 +66,7 @@ apps=(
     #"pavucontrol"                      # pulseaudio vol control
     "picom-git"                        # composito
     "playerctl"                        # playerctl
+    "plex-desktop"                     # plex desktop client
     "podman"                           # simple management tool for pods, containers and images
     "python-pipenv"                    # manage python virtualenvs
     "python-pyotp"                     # python otp lib for aegis-decrypt
