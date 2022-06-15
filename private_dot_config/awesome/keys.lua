@@ -138,6 +138,8 @@ local globalkeys = gears.table.join(
               {description = "browser", group = "launcher"}),
     awful.key({ modkey,           }, "e",      function () awful.spawn("thunar")    end,
               {description = "file manager", group = "launcher"}),
+    awful.key({ modkey,           }, "l",      function () awful.spawn("light-locker-command -l")    end,
+              {description = "lock screen", group = "launcher"}),
     awful.key({                   }, "Print",
         function ()
             awful.util.spawn_with_shell(screenshot_selection)
