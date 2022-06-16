@@ -451,6 +451,10 @@ function theme.at_screen_connect(s)
 
     if screen_index == 1 then
         -- Left Screen
+        s.systray = wibox.widget.systray()
+        s.systray.visible = false
+        s.systray:set_screen(s)
+
         s.wibox:setup {
             layout = wibox.layout.align.horizontal,
             { -- Left widgets
@@ -511,7 +515,17 @@ function theme.at_screen_connect(s)
 	    				shape = gears.shape.rounded_rect,
 	    				widget = wibox.container.background,
 	    			},
-	    			half_spr,
+	    			{
+	    				{
+	    					layout = wibox.layout.fixed.horizontal,
+	    					half_spr,
+	    					wibox.widget.systray(),
+	    					--half_spr,
+	    				},
+	    				bg = theme.bg_light,
+	    				shape = gears.shape.rounded_rect,
+	    				widget = wibox.container.background,
+	    			},
 	    		},
 	    		widget = wibox.container.margin,
 	    	},
