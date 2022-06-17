@@ -14,6 +14,7 @@ apps=(
     #"base-devel"                       # base-devel
     "alacritty"                        # my terminal of choice
     "arandr"                           # xrandr gui
+    "aws-cli-v2-bin"                   # cli for aws v2
     "bat"                              # cat clone with syntax highlighting and Git integration
     "bitwarden-cli"                    # command line vault
     "blueman"                          # bluetooth manager
@@ -28,6 +29,7 @@ apps=(
     "dnsutils"                         # dnsutils like dig, host etc.
     "downgrade"                        # downgrade arch linux packages
     "duf"                              # disk usage/free utility
+    "eksctl"                           # cli for creating clusters on amazon eks
     "exa"                              # colored ls
     "fd"                               # "find" for files
     "flameshot"                        # screenshot tool
