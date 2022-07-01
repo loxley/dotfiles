@@ -78,14 +78,14 @@ window:
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
 
-  # Window class (Linux/BSD only):
+  # Window class ({{ .chezmoi.kernel.ostype }}/BSD only):
   #class:
     # Application instance name
     #instance: Alacritty
     # General application class
     #general: Alacritty
 
-  # GTK theme variant (Linux/BSD only)
+  # GTK theme variant ({{ .chezmoi.kernel.ostype }}/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark`
   # and `light`. Set this to `None` to use the default theme variant.
@@ -107,7 +107,7 @@ font:
     #
     # Default:
     #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
+    #   - ({{ .chezmoi.kernel.ostype }}/BSD) monospace
     #   - (Windows) Consolas
     #family: Ubuntu Mono derivative Powerline
     #family: Droid Sans Mono Slashed for Powerline
@@ -166,7 +166,11 @@ font:
     #style: Bold Italic
 
   # Point size
+{{- if eq .chezmoi.hostname "jndstrom-basefarm" }}
+  size: 7.0
+{{- else}}
   size: 10.0
+{{- end }}
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -537,7 +541,7 @@ colors:
 #selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  #semantic_escape_chars: ",│`|:\"' ()[]{{ "{}" }}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
@@ -578,7 +582,7 @@ colors:
 #
 # Default:
 #   - (macOS) /bin/bash --login
-#   - (Linux/BSD) user login shell
+#   - ({{ .chezmoi.kernel.ostype }}/BSD) user login shell
 #   - (Windows) powershell
 #shell:
 #  program: /bin/bash
@@ -626,7 +630,7 @@ colors:
     #
     # Default:
     #   - (macOS) open
-    #   - (Linux/BSD) xdg-open
+    #   - ({{ .chezmoi.kernel.ostype }}/BSD) xdg-open
     #   - (Windows) explorer
     #launcher:
     #  program: xdg-open
@@ -804,7 +808,7 @@ colors:
 #   - ToggleSimpleFullscreen
 #       Enter fullscreen without occupying another space.
 #
-# - Linux/BSD exclusive actions:
+# - {{ .chezmoi.kernel.ostype }}/BSD exclusive actions:
 #
 #   - CopySelection
 #       Copy from the selection buffer.
@@ -911,7 +915,7 @@ colors:
   #- { key: N,                           mode: Vi, action: SearchNext              }
   #- { key: N,      mods: Shift,         mode: Vi, action: SearchPrevious          }
 
-  # (Windows, Linux, and BSD only)
+  # (Windows, {{ .chezmoi.kernel.ostype }}, and BSD only)
   #- { key: V,              mods: Control|Shift,           action: Paste            }
   #- { key: C,              mods: Control|Shift,           action: Copy             }
   #- { key: F,              mods: Control|Shift,           action: SearchForward    }
