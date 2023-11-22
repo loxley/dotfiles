@@ -76,7 +76,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    #archlinux
+    archlinux
     fzf
     fzf-tab
     git
@@ -152,22 +152,23 @@ export PATH="/home/loxley/gosdk/go1.17.7/bin:/home/loxley/go/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # vi/vim to nvim
-alias vi="nvim"
-alias vim="nvim"
+alias vi="lvim"
+alias vim="lvim"
 
-# exa
+# eza
 export EXA_GRID_ROWS=20
-alias ls='exa --color=always --git' # my preferred listing
-alias l='exa -al --color=always --group-directories-first --git --grid' # my preferred listing
-alias ll='exa -l --color=always --group-directories-first --git --grid' # my preferred listing
-alias la='exa -al --color=always --group-directories-first --git' # my preferred listing
-alias lt='exa -al -snew --color=always --group-directories-first --git --grid' # my preferred listing
-alias lr='exa -al --color=always --group-directories-first --git --grid --tree --level=3' # my preferred listing
+alias ls='eza --color=always --git' # my preferred listing
+alias l='eza -al --color=always --group-directories-first --git --grid' # my preferred listing
+alias ll='eza -l --color=always --group-directories-first --git --grid' # my preferred listing
+alias la='eza -al --color=always --group-directories-first --git' # my preferred listing
+alias lt='eza -al -snew --color=always --group-directories-first --git --grid' # my preferred listing
+alias lr='eza -al --color=always --group-directories-first --git --grid --tree --level=3' # my preferred listing
 
 # cat/less/man to bat
 alias cat="bat --style=plain --paging=never"
 alias less="bat --style=plain"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 #export BAT_THEME="Monokai Extended Origin"
 
 # gcloud functions
@@ -184,6 +185,11 @@ function get-iam-policy-member {
     gcloud projects get-iam-policy "$project" --flatten="bindings[].members" --filter="bindings.members=$email" --format="value(bindings.role)"
 }
 
+alias gcrls='gcloud container images list --repository eu.gcr.io/prd-registry-1-ds6g'
+alias gcrauth='gcloud auth print-access-token | podman login -u oauth2accesstoken --password-stdin eu.gcr.io'
+alias gp='project=$(gcloud projects list | cut -d" " -f1 | tail -n +2 | fzf --no-sort --tac --exact); gcloud config set project $project'
+alias gssh='instance=$(gcloud compute instances list --format="table[no-heading](name,zone,status,networkInterfaces[0].networkIP,networkInterfaces[0].accessConfigs[0].natIP)" --filter="status=RUNNING" | fzf --no-sort --tac --exact | cut -d" " -f1); gcloud compute ssh $instance'
+
 # Node Version Manager
 source /usr/share/nvm/init-nvm.sh
 
@@ -192,6 +198,9 @@ if [ -f '/home/loxley/.local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/loxley/.local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/loxley/.local/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Allow gcloud to access external packages
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
 
 # Starship prompt
 eval "$(starship init zsh)"
@@ -205,8 +214,8 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with exa when completing cd
-#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# preview directory's content with eza when completing cd
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 # https://github.com/Aloxaf/fzf-tab/wiki/Preview#show-file-contents
