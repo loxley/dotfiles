@@ -8,7 +8,7 @@ require("awful.hotkeys_popup.keys")
 modkey = "Mod4"
 altkey = "Mod1"
 
-launcher = "rofi -normal-window -show drun -modi drun,ssh -theme /home/loxley/.config/awesome/rofi.rasi"
+launcher = "rofi -normal-window -show drun -modi drun,ssh -theme ~/.config/awesome/rofi.rasi"
 screenshot = "flameshot screen -p '/home/loxley/Pictures/screenshots/'"
 screenshot_selection = "flameshot gui -d 1000"
 
@@ -154,7 +154,7 @@ local globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 10") end),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end),
 
-    awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pamixer -i +5") end),
+    awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("pamixer -i 5") end),
     awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("pamixer -d 5") end),
     awful.key({ }, "XF86AudioMute",         function () awful.util.spawn("pamixer -t") end),
 
