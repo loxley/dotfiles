@@ -46,7 +46,7 @@ local function worker(user_args)
         widget:set_vpn_name(vpn_name_stdout)
     end
 
-    local nmcli = "nmcli connection show --active | grep wireguard | cut -d \' \' -f1"
+    local nmcli = "nmcli connection show --active | grep -e wireguard -e Prisjakt | cut -d \' \' -f1"
 
     watch(string.format([[bash -c "%s"]], nmcli), timeout, update_widget, vpn_widget)
 
