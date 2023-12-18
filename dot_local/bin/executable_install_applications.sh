@@ -84,6 +84,7 @@ apps=(
     "slack-desktop"                    # slack
     #"sof-firmware"                     # Sound Open firmare for thinkapd t14
     "spotify"                          # spotify
+    "sslscan"                          # sslscan tool to determine supported ciphers
     "starship"                         # starship prompt
     "step-cli"                         # plumbing for distributed systems
     "syncthing"                        # continuous replication / cluster synchronization thing
@@ -127,7 +128,7 @@ echo "Iosevka Regular"
 test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete.ttf -P ~/.local/share/fonts/
 
 echo "Iosevka Regular Mono"
-test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/ 
+test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
 
 echo "Source Code Pro (SauceCodePro) Semibold Italic"
 test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold-Italic/complete/Sauce%20Code%20Pro%20Semibold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
