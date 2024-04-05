@@ -41,12 +41,37 @@ ssh_only = true
 format = '[@:\(](white)[$hostname](red)[\)](white) '
 
 [kubernetes]
-format = '[k8s:\(](white)[$context](cyan)([\(](dimmed cyan)[$namespace](cyan)[\)](dimmed cyan))[\)](white) '
+format = '[k8s:\(](white)[$symbol$context$symbol]($style)([\(](dimmed $style)[$namespace]($style)[\)](dimmed $style))[\)](white) '
 disabled = false
-[kubernetes.context_aliases]
-"dev.local.cluster.k8s" = "dev"
-".*/openshift-cluster/.*" = "openshift"
-"gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
+
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>dev[\\w-]+)"
+style = "cyan"
+symbol = ""
+context_alias = "gke-$cluster"
+
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>stg[\\w-]+)"
+style = "yellow"
+symbol = ""
+context_alias = "gke-$cluster"
+
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>(prd|australia)[\\w-]+)"
+style = "red"
+symbol = ""
+context_alias = "gke-$cluster"
+
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
+style = "cyan"
+symbol = ""
+context_alias = "gke-$cluster"
+
+#[kubernetes.context_aliases]
+#"dev.local.cluster.k8s" = "dev"
+#".*/openshift-cluster/.*" = "openshift"
+#"gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
 
 [python]
 format = '[py:\(](white)[$version](yellow bold)([\(](dimmed yellow)[$virtualenv](yellow bold)[\)](dimmed yellow))[\)](white) '
