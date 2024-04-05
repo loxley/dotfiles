@@ -15,6 +15,7 @@ apps=(
     "alacritty"                        # my terminal of choice
     "arandr"                           # xrandr gui
     "aws-cli-v2-bin"                   # cli for aws v2
+    "azote"                            # Wallpaper & color manager for wlroots-based compositors
     "bat"                              # cat clone with syntax highlighting and Git integration
     "bitwarden-cli"                    # command line vault
     "blueman"                          # bluetooth manager
@@ -29,20 +30,26 @@ apps=(
     "dnsutils"                         # dnsutils like dig, host etc.
     "downgrade"                        # downgrade arch linux packages
     "duf"                              # disk usage/free utility
+    "dunst"                            # Customizable and lightweight notification-daemon
     "eksctl"                           # cli for creating clusters on amazon eks
     "exa"                              # colored ls
+    "exodus"                           # bitcoin wallet
     "fd"                               # "find" for files
-    "flameshot"                        # screenshot tool
+    "flameshot-git"                    # screenshot tool
     "foliate"                          # ebook reader
     "fzf"                              # command-line fuzzy finder
     "git"                              # git
     "github-cli"                       # yep, github cli
     "git-lfs"                          # git large files in Git repositories
+    "grim"                             # Screenshot utility for Wayland
     "gtk-engines"                      # theme engines for GTK+ 2
     "gtk-engine-murrine"               # murrina engine
     "helm"                             # helm for k8s
     "htop"                             # hipster top
     "httpie"                           # human-friendly CLI HTTP for the API era
+    "hyperland"                        # a highly customizable dynamic tiling Wayland compositor
+    "hypridle"                         # hyprland’s idle daemon
+    "hyprlock"                         # hyprland’s GPU-accelerated screen locking utility
     #"hypnotix"                         # iptv app
     "jq"                               # jq cli
     "jwt-cli"                          # decode/encode JWTs
@@ -63,6 +70,7 @@ apps=(
     "nmap"                             # nmap - network discovery / portscan
     "openbsd-netcat"                   # TCP/IP swiss army knife
     "nvm"                              # node version manager
+    "nwg-look"                         #  GTK3 settings editor adapted to work on wlroots-based compositors
     "pa-applet"                        # pulseaudio applet
     "pamixer"                          # pulseaudio command line mixer
     #"pavucontrol"                      # pulseaudio vol control
@@ -70,9 +78,12 @@ apps=(
     "playerctl"                        # playerctl
     "plex-desktop"                     # plex desktop client
     "podman"                           # simple management tool for pods, containers and images
+    "prometheus-node-exporter"         # Exporter for machine metrics
     "python-pipenv"                    # manage python virtualenvs
     "python-pyotp"                     # python otp lib for aegis-decrypt
     "python-qrcode"                    # python qr code lib for aegis-decrypt
+    "qt5ct"                            # qt5ct
+    "qt6ct"                            # qt6ct
     "rclone"                           # manage files on cloud storage
     "ripgrep"                          # recursive search on steroids
     "ristretto"                        # picture viewer
@@ -82,6 +93,7 @@ apps=(
     "signal-desktop"                   # signal messenger
     "sipcalc"                          # subnetting calculator
     "slack-desktop"                    # slack
+    "slurp"                            # Select a region in a Wayland compositor
     #"sof-firmware"                     # Sound Open firmare for thinkapd t14
     "spotify"                          # spotify
     "sslscan"                          # sslscan tool to determine supported ciphers
@@ -96,9 +108,12 @@ apps=(
     "unzip"                            # unzip
     "v4l-utils"                        # userspace tools for video 4 linux
     "visual-studio-code-bin"           # VS Code
+    "waybar"                           # waybar
     "whois"                            # whois
     "wireguard-tools"                  # secure network tunnel - tools
+    "wl-clipboard"                     # Command-line copy/paste utilities for Wayland
     "xclip"                            # clipboard
+    "xdg-desktop-portal-hyprland"      # xdg-desktop-portal backend for hyprland
     "xdg-user-dirs"                # xdg-user-dirs
     "xdg-utils"                        # xdg-utils
     #"xfce4-power-manager"              # xfce power manager
