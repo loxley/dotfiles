@@ -1,0 +1,22 @@
+# https://github.com/dunst-project/dunst/blob/master/dunstrc
+[global]
+monitor = 0
+follow = mouse
+frame_color = "#89B4FA"
+separator_color= frame
+enable_recursive_icon_lookup = true
+icon_theme = Tela-dark
+font = Noto Sans 10
+
+[urgency_low]
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+
+[urgency_normal]
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+
+[urgency_critical]
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+frame_color = "#FAB387"
