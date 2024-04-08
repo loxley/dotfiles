@@ -15,12 +15,12 @@
         ],
         "modules-center": [
             "hyprland/window"
-        ],
-        "modules-right": [
-            //"cpu"
-            "network",
-            "idle_inhibitor"
         ]
+        //"modules-right": [
+        //    //"cpu"
+        //    //"network",
+        //    //"idle_inhibitor"
+        //]
     },
     {
         "name": "DP-2",
@@ -43,8 +43,8 @@
             "custom/vpn",
             //"hyprland/language",
             //"custom/weather",
-            "clock",
-            "tray",
+            "clock"
+            //"tray",
         ]
     }
 ]

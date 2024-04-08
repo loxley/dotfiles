@@ -25,7 +25,7 @@ window#waybar.DP-2 {
 #workspaces button {
     font-size: 11pt;
     transition-property: all;
-    transition-duration: 0.5s;
+    transition-duration: 0.25s;
     padding: 0 10px;
     color: #82aaff;
 }
