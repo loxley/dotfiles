@@ -15,12 +15,13 @@
         ],
         "modules-center": [
             "hyprland/window"
+        ],
+        "modules-right": [
+            "mpris"
+            //"cpu"
+            //"network",
+            //"idle_inhibitor"
         ]
-        //"modules-right": [
-        //    //"cpu"
-        //    //"network",
-        //    //"idle_inhibitor"
-        //]
     },
     {
         "name": "DP-2",

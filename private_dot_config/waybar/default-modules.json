@@ -37,20 +37,25 @@
     "rewrite": {
       //"(.*) - Brave": "sdf  $1",
       "(.*) - YouTube - Brave": "  $1",
-      "(.*)(?!YouTube) - Brave": "  $1",
+      "(.*)(?!YouTube) - Brave": "󱝆  $1",
       "(.*.json.*) - NVIM": "󰘦  $1",
       "(.*(.go|go.mod|go.sum) .*) - NVIM": "  $1",
       "(.*(.py) .*) - NVIM": "  $1",
+      "(.*(.txt) .*) - NVIM": "󱩽  $1",
+      "(.*hypr.*) - NVIM": "  $1",
       "(.*loxley@ruby.*)": "  $1",
       "(.*.tf(vars)?.*) - NVIM": "󱁢  $1",
-      "(.*) - Slack": "󰒱  $1",
+      "(.*) - Slack": "  $1",
       "(Signal)": "󰭹  $1",
-      "(Spotify Premium)": "󰓇  $1",
-      "(.*(html|htm|css|js|xml|php|asp|aspx|jsp|sql|md|yaml|yml|scss|less|coffee|ts|jsx|svg|wasm|webp|webm) .*) - NVIM": "  $1"
+      "(Spotify Premium)": "  $1",
+      "(Jellyfin Media Player)": "󰎁  $1",
+      "(EXODUS).*": "󰠓  $1",
+      "(.*(html|htm|css|js|xml|php|asp|aspx|jsp|sql|md|yaml|yml|scss|less|coffee|ts|jsx|svg|wasm|webp|webm) .*) - NVIM": "  $1",
+      "(.*(gpg|pem|cer|crt|p12|pfx|der|csr|key|crl|jks|p7b|p7c) .*) - NVIM": "󱕵  $1"
     }
   },
   "clock": {
-    "format": " {:%R}",
+    "format": "<span color='#ffcb8b'> {:%d %b %Y</span> <span color='#c792ea'> %R</span>}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "tray": {
@@ -108,5 +113,26 @@
       "activated": " ",
       "deactivated": " "
     }
+  },
+  "mpris": {
+  	"format": "{player_icon} {dynamic}",
+  	"format-paused": "{status_icon} <i>{dynamic}</i>",
+  	"player-icons": {
+  		"default": "▶",
+  		"mpv": "🎵",
+      "spotify": "<span color='#1db954'></span> ",
+  	},
+    //"title-len": 10,
+  	"status-icons": {
+  		"paused": "⏸"
+  	},
+    "dynamic-order": [
+      "title",
+      "artist"
+      //"position",
+      //"length"
+    ],
+    //"interval": 1,
+  	"ignored-players": ["brave"]
   }
 }

@@ -7,7 +7,7 @@
     min-height: 0;
 }
 window#waybar.DP-1 {
-    font-size: 9pt;
+    font-size: 12px;
     opacity: 1.0;
     background: @background-darker;
     color: @foreground;
@@ -15,7 +15,7 @@ window#waybar.DP-1 {
     border-image: linear-gradient(to right, @background, @cyan) 1;
 }
 window#waybar.DP-2 {
-    font-size: 9pt;
+    font-size: 12px;
     opacity: 1.0;
     background: @background-darker;
     color: @foreground;
@@ -23,7 +23,7 @@ window#waybar.DP-2 {
     border-image: linear-gradient(to left, @background, @cyan) 1;
 }
 #workspaces button {
-    font-size: 11pt;
+    font-size: 16px;
     transition-property: all;
     transition-duration: 0.25s;
     padding: 0 10px;
@@ -76,5 +76,13 @@ window#waybar.brave-browser {
     color: red;
 }
 #custom-vpn {
-  padding: 0 4px;
+    padding: 0 4px;
+}
+#mpris {
+    padding: 0 4px;
+    transition-property: all;
+    transition-duration: 0.25s;
+}
+#mpris.paused {
+    opacity: 0.5;
 }
