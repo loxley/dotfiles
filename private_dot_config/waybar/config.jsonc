@@ -10,7 +10,8 @@
         "height": 24,
         "spacing": 4,
         "modules-left": [
-            "hyprland/workspaces"
+            "hyprland/workspaces",
+            "cava"
             //"wlr/taskbar"
         ],
         "modules-center": [
@@ -18,6 +19,7 @@
         ],
         "modules-right": [
             "mpris"
+            //"cava"
             //"cpu"
             //"network",
             //"idle_inhibitor"

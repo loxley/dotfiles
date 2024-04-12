@@ -134,5 +134,16 @@
     ],
     //"interval": 1,
   	"ignored-players": ["brave"]
+  },
+  "cava": {
+    //"cava_config": "/home/loxley/.config/cava/config",
+    "bars": 16,
+    "framerate": 120,
+    "bar_delimiter": 32,
+    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    "sleep_timer": 5,
+    "hide_on_silence": true,
+    //"monstercat": true,
+    //"waves": true
   }
 }
