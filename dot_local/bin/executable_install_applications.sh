@@ -65,6 +65,7 @@ apps=(
     "mtr"                              # traceroute and ping
     "ncdu"                             # disk space info (a better du)
     "neovim"                           # vim fork improved
+    "networkmanager-dmenu-git"         # networkmanger using dmenu and rofi
     "networkmanager-openconnect"       # networkmanager vpn plugin for openconnect
     "nitrogen"                         # nitrogen wallpaper manager
     "nmap"                             # nmap - network discovery / portscan
@@ -108,7 +109,7 @@ apps=(
     "unzip"                            # unzip
     "v4l-utils"                        # userspace tools for video 4 linux
     "visual-studio-code-bin"           # VS Code
-    "waybar"                           # waybar
+    "waybar-cava-git"                  # waybar with cava support
     "whois"                            # whois
     "wireguard-tools"                  # secure network tunnel - tools
     "wl-clipboard"                     # Command-line copy/paste utilities for Wayland
