@@ -22,6 +22,15 @@ window#waybar.DP-2 {
     border-bottom: 1px solid @background;
     border-image: linear-gradient(to left, @background, @cyan) 1;
 }
+tooltip {
+	  color: #cdd6f4;
+    background: #1e1e2e;
+    opacity: 0.8;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #89b4fa;
+}
 .modules-center {
     color: #82aaff;
     font-weight: bold;
@@ -82,10 +91,14 @@ window#waybar.brave-browser {
 #custom-vpn {
     padding: 0 4px;
 }
+#custom-weather {
+    color: #ffbd2e;
+}
 #mpris {
+    color: #1db954;
     padding: 0 4px;
-    transition-property: all;
-    transition-duration: 0.25s;
+    /*transition-property: all;
+    transition-duration: 0.25s;*/
 }
 #mpris.paused {
     opacity: 0.5;
@@ -96,3 +109,21 @@ window#waybar.brave-browser {
     opacity: 0.5;
     padding: 0 0 0 4px;
 }
+#pulseaudio {
+    color: #88c0d0;
+    padding: 0 4px;
+    transition-property: all;
+    transition-duration: 0.25s;
+}
+#pulseaudio.muted {
+    opacity: 0.5;
+}
+#pulseaudio.microphone {
+    color: #88c0d0;
+    /* color: #fc84e4; */
+    padding: 0 4px;
+}
+#pulseaudio.source-muted.microphone {
+    opacity: 0.5;
+}
+

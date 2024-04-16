@@ -1,53 +1,46 @@
 [
-    {
-        "name": "DP-1",
-        "include": [
-            "~/.config/waybar/default-modules.json",
-        ],
-        "output": "DP-1",
-        "layer": "top",
-        "position": "top",
-        "height": 24,
-        "spacing": 4,
-        "modules-left": [
-            "hyprland/workspaces",
-            "cava"
-            //"wlr/taskbar"
-        ],
-        "modules-center": [
-            "hyprland/window"
-        ],
-        "modules-right": [
-            "mpris"
-            //"cava"
-            //"cpu"
-            //"network",
-            //"idle_inhibitor"
-        ]
-    },
-    {
-        "name": "DP-2",
-        "include": [
-            "~/.config/waybar/default-modules.json",
-        ],
-        "output": "DP-2",
-        "layer": "top",
-        "position": "top",
-        "height": 24,
-        "spacing": 4,
-        "modules-left": [
-            "hyprland/workspaces"
-            //"wlr/taskbar"
-        ],
-        "modules-center": [
-            "hyprland/window"
-        ],
-        "modules-right": [
-            "custom/vpn",
-            //"hyprland/language",
-            //"custom/weather",
-            "clock"
-            //"tray",
-        ]
-    }
+  {
+    "name": "DP-1",
+    "include": [
+      "~/.config/waybar/default-modules.json",
+    ],
+    "output": "DP-1",
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 4,
+    "modules-left": [
+      "hyprland/workspaces",
+      "cava"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "mpris",
+      "group/audio"
+    ]
+  },
+  {
+    "name": "DP-2",
+    "include": [
+      "~/.config/waybar/default-modules.json",
+    ],
+    "output": "DP-2",
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 4,
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "custom/vpn",
+      "custom/weather",
+      "clock"
+    ]
+  }
 ]

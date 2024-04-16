@@ -24,6 +24,7 @@ apps=(
     "btop"                             # btop++
     "chafa"                            # character art facsimile generator
     "chezmoi"                          # manages my dotfiles and ssh keys
+    "cliphist"                         # wayland clipboard manager
     "ctags"                            # generate tag files for source code
     "curl"                             # transfer a url
     #"dive-bin"                         # explore docker layers

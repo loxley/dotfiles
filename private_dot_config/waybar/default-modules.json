@@ -20,7 +20,8 @@
 		  "5": "",
 		  "6": "",
 		  "7": "",
-		  "8": "",
+		  //"8": "",
+		  "8": "󰿎",
 		  "9": "",
 		  "10": "漣",
 		  //"active": "",
@@ -58,16 +59,16 @@
     "format": "<span color='#ffcb8b'> {:%d %b %Y</span> <span color='#c792ea'> %R</span>}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  "tray": {
-    "spacing": 4
-  },
-  "custom/weather": {
-    "exec": "~/.config/waybar/wittr.sh",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 900
-  },
+  //"tray": {
+  //  "spacing": 4
+  //},
+  //"custom/weather": {
+  //  "exec": "~/.config/waybar/wittr.sh",
+  //  "return-type": "json",
+  //  "format": "{}",
+  //  "tooltip": true,
+  //  "interval": 900
+  //},
   "custom/vpn": {
     "exec": "~/.config/waybar/vpn.sh",
     "return-type": "json",
@@ -80,43 +81,48 @@
     "format-en": "[us]",
     "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
   },
-  "cpu": {
-    "interval": 1,
-    "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
-    "format-icons": [
-      "<span color='#69ff94'>▁</span>", // green
-      "<span color='#2aa9ff'>▂</span>", // blue
-      "<span color='#f8f8f2'>▃</span>", // white
-      "<span color='#f8f8f2'>▄</span>", // white
-      "<span color='#ffffa5'>▅</span>", // yellow
-      "<span color='#ffffa5'>▆</span>", // yellow
-      "<span color='#ff9977'>▇</span>", // orange
-      "<span color='#dd532e'>█</span>" // red
-    ]
-  },
-  "network": {
-    "interval": 2,
-    "interface": "wlp3s0",
-    "format": "{ifname}",
-    "format-wifi": "{bandwidthUpBits} 󰁝 󰁅 {bandwidthDownBits}",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "", //An empty format will hide the module.
-    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": " ",
-      "deactivated": " "
-    }
-  },
+  //"cpu": {
+  //  "interval": 1,
+  //  "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
+  //  "format-icons": [
+  //    "<span color='#69ff94'>▁</span>", // green
+  //    "<span color='#2aa9ff'>▂</span>", // blue
+  //    "<span color='#f8f8f2'>▃</span>", // white
+  //    "<span color='#f8f8f2'>▄</span>", // white
+  //    "<span color='#ffffa5'>▅</span>", // yellow
+  //    "<span color='#ffffa5'>▆</span>", // yellow
+  //    "<span color='#ff9977'>▇</span>", // orange
+  //    "<span color='#dd532e'>█</span>" // red
+  //  ]
+  //},
+  //"network": {
+  //  "interval": 2,
+  //  "interface": "wlp3s0",
+  //  "format": "{ifname}",
+  //  "format-wifi": "{bandwidthUpBits} 󰁝 󰁅 {bandwidthDownBits}",
+  //  "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+  //  "format-disconnected": "", //An empty format will hide the module.
+  //  "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+  //  "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+  //  "tooltip-format-ethernet": "{ifname} ",
+  //  "tooltip-format-disconnected": "Disconnected",
+  //  "max-length": 50
+  //},
+  //"idle_inhibitor": {
+  //  "format": "{icon}",
+  //  "format-icons": {
+  //    "activated": " ",
+  //    "deactivated": " "
+  //  }
+  //},
   "mpris": {
   	"format": "{player_icon} {dynamic}",
-  	"format-paused": "{status_icon} <i>{dynamic}</i>",
+  	"format-paused": "{status_icon} {dynamic}",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec",
   	"player-icons": {
   		"default": "▶",
   		"mpv": "🎵",
@@ -132,18 +138,87 @@
       //"position",
       //"length"
     ],
-    //"interval": 1,
-  	"ignored-players": ["brave"]
+    "interval": 1,
+  	"ignored-players": ["brave"],
+    "max-length": 60
   },
   "cava": {
     //"cava_config": "/home/loxley/.config/cava/config",
-    "bars": 16,
-    "framerate": 120,
+    "bars": 8,
+    "framerate": 60,
     "bar_delimiter": 32,
     "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-    "sleep_timer": 5,
+    //"sleep_timer": 5,
     "hide_on_silence": true,
+	  "on-click": "~/.config/hypr/scripts/volume.sh --toggle",
+    //"on-click-right": "~/.config/hypr/scripts/volume.sh --toggle-mic",
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec",
     //"monstercat": true,
     //"waves": true
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  󰂰 {volume}%",
+    "format-muted": "{icon}  󰖁 {volume}%",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "󰕾", ""], 
+      "ignored-sinks": ["Easy Effects Sink"],
+    },
+    "scroll-step": 5.0,
+    "on-click": "~/.config/hypr/scripts/volume.sh --toggle",
+    "on-click-right": "pavucontrol -t 3",
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec",
+	  "tooltip-format": "{icon}  {desc} | {volume}%",
+    "smooth-scrolling-threshold": 1,
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " {volume}%",
+    "scroll-step": 5.0,
+    "on-click": "~/.config/hypr/scripts/volume.sh --toggle-mic",
+    "on-click-right": "pavucontrol -t 4",
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --mic-inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --mic-dec",
+	  "tooltip-format": "{source_desc} | {source_volume}%",
+    "smooth-scrolling-threshold": 1,
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#microphone",
+    ]	
+  },
+  "custom/weather": {
+    "format": "{}",
+    "format-alt": "{alt}: {}",
+    "format-alt-click": "click-right",
+    "interval": 1800,
+    "return-type": "json",
+    "exec": "~/.config/waybar/weather.sh Anderslöv",
+    "exec-if": "ping wttr.in -c1"
   }
+  //"custom/disk": {
+  //  "format": "{}",
+  //  "format-alt": "{alt}: {}",
+  //  "format-alt-click": "click-right",
+  //  "interval": 1800,
+  //  "return-type": "json",
+  //  "exec": "~/.config/waybar/disk.sh /srv/media",
+  //  "exec-if": "ping foobar.loxley.se -c1"
+  //}
 }

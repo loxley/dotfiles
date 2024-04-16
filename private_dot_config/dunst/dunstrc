@@ -3,10 +3,12 @@
 monitor = 0
 follow = mouse
 frame_color = "#89B4FA"
+frame_width = 2
 separator_color= frame
 enable_recursive_icon_lookup = true
 icon_theme = Tela-dark
 font = Noto Sans 10
+corner_radius = 10
 
 [urgency_low]
 background = "#1E1E2E"
