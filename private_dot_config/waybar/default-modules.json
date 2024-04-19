@@ -37,7 +37,7 @@
     "format": "{}",
     "rewrite": {
       //"(.*) - Brave": "sdf  $1",
-      "(.*) - YouTube - Brave": "  $1",
+      "(.*) - YouTube - Brave": "󰗃  $1",
       "(.*)(?!YouTube) - Brave": "󱝆  $1",
       "(.*.json.*) - NVIM": "󰘦  $1",
       "(.*(.go|go.mod|go.sum) .*) - NVIM": "  $1",
@@ -138,7 +138,7 @@
       //"position",
       //"length"
     ],
-    "interval": 1,
+    //"interval": 1,
   	"ignored-players": ["brave"],
     "max-length": 60
   },
@@ -211,14 +211,14 @@
     "return-type": "json",
     "exec": "~/.config/waybar/weather.sh Anderslöv",
     "exec-if": "ping wttr.in -c1"
+  },
+  "custom/disk": {
+    "format": "{}",
+    "format-alt": "{alt}: {}",
+    "format-alt-click": "click-right",
+    "interval": 1800,
+    "return-type": "json",
+    "exec": "~/.config/waybar/disk.sh /srv/media",
+    "exec-if": "ping foobar.loxley.se -c1"
   }
-  //"custom/disk": {
-  //  "format": "{}",
-  //  "format-alt": "{alt}: {}",
-  //  "format-alt-click": "click-right",
-  //  "interval": 1800,
-  //  "return-type": "json",
-  //  "exec": "~/.config/waybar/disk.sh /srv/media",
-  //  "exec-if": "ping foobar.loxley.se -c1"
-  //}
 }
