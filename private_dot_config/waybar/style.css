@@ -2,8 +2,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Iosevka Nerd Font;
-    /*font-size: 9pt;*/
+    font-family: Iosevka NF;
     min-height: 0;
 }
 window#waybar.DP-1 {
@@ -23,7 +22,7 @@ window#waybar.DP-2 {
     border-image: linear-gradient(to left, @background, @cyan) 1;
 }
 tooltip {
-	  color: #cdd6f4;
+    color: #cdd6f4;
     background: #1e1e2e;
     opacity: 0.8;
     border-radius: 10px;
@@ -93,6 +92,9 @@ window#waybar.brave-browser {
 }
 #custom-weather {
     color: #ffbd2e;
+}
+#custom-gmail {
+    color: #82aaff;
 }
 #mpris {
     color: #1db954;

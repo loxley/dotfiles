@@ -20,7 +20,6 @@
 		  "5": "",
 		  "6": "",
 		  "7": "",
-		  //"8": "",
 		  "8": "󰿎",
 		  "9": "",
 		  "10": "漣",
@@ -211,6 +210,7 @@
     "interval": 1800,
     "return-type": "json",
     "exec": "~/.config/waybar/weather.sh Anderslöv",
+    //"exec": "wttrbar --location Anderslöv",
     "exec-if": "ping wttr.in -c1"
   },
   "custom/disk": {
