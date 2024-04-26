@@ -56,9 +56,11 @@ apps=(
     "jwt-cli"                          # decode/encode JWTs
     "neovim"                           # ditched vim for neovim
     "k9s"                              # view/manage k8s clusters
+    "kitty"                            # kitty terminal
     "krew-bin"                         # package manager for kubectl plugins
     "kubectl"                          # kubectl
     "kubectx"                          # kubectx
+    "lazygit"                          # simple terminal UI for git commands
     "light-locker"                     # screen locker
     "lscolors-git"                     # colored shell
     "lxappearance"                     # lxappearance
@@ -141,15 +143,30 @@ xdg-user-dirs-update
 # fonts
 echo "Installing fonts..."
 
-echo "Iosevka Regular"
-test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete.ttf -P ~/.local/share/fonts/
+#echo "Iosevka Regular"
+#test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete.ttf -P ~/.local/share/fonts/
 
-echo "Iosevka Regular Mono"
-test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
+#echo "Iosevka Regular Mono"
+#test -f "${HOME}/.local/share/fonts/Iosevka Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
 
-echo "Source Code Pro (SauceCodePro) Semibold Italic"
-test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold-Italic/complete/Sauce%20Code%20Pro%20Semibold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
+echo "IosevkaNerdFont-Regular.ttf"
+test -f "${HOME}/.local/share/fonts/IosevkaNerdFont-Regular.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/IosevkaNerdFont-Regular.ttf -P ~/.local/share/fonts/
 
-echo "Source Code Pro (SauceCodePro) Semibold Mono"
-test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
+echo "SauceCodeProNerdFontMono-Italic.ttf"
+test -f "${HOME}/.local/share/fonts/SauceCodeProNerdFontMono-Italic.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-Italic.ttf -P ~/.local/share/fonts/
+
+echo "SauceCodeProNerdFontMono-Regular.ttf"
+test -f "${HOME}/.local/share/fonts/SauceCodeProNerdFontMono-Regular.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-Regular.ttf -P ~/.local/share/fonts/
+
+echo "SauceCodeProNerdFontMono-SemiBold.ttf"
+test -f "${HOME}/.local/share/fonts/SauceCodeProNerdFontMono-SemiBold.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-SemiBold.ttf -P ~/.local/share/fonts/
+
+echo "SauceCodeProNerdFontMono-SemiBoldItalic.ttf"
+test -f "${HOME}/.local/share/fonts/SauceCodeProNerdFontMono-SemiBoldItalic.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-SemiBoldItalic.ttf -P ~/.local/share/fonts/
+
+#echo "Source Code Pro (SauceCodePro) Semibold Italic"
+#test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold-Italic/complete/Sauce%20Code%20Pro%20Semibold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
+
+#echo "Source Code Pro (SauceCodePro) Semibold Mono"
+#test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
 

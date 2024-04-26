@@ -1,21 +1,26 @@
 #!/bin/sh
 
-MULLVAD=$(nmcli connection show --active | grep wireguard | cut -d ' ' -f1)
+MULLVAD=$(nmcli connection show --active | grep -e wireguard -e Prisjakt| cut -d ' ' -f1)
+ICON_LOCK="/home/loxley/.local/share/icons/Tela-dark/24/actions/lock.svg"
+ICON_UNLOCK="/home/loxley/.local/share/icons/Tela-dark/24/actions/lock.svg"
 
 case $MULLVAD in
-    "mullvad-se1")
-        echo "mullvad-se1 found, switching to mullvad-se1-ikea"
-        nmcli connection down mullvad-se1 && nmcli connection up mullvad-se1-ikea
+    "se-mma-wg-004")
+        echo "se-mma-wg-004 found, switching to Prisjakt"
+        notify-send -e -u normal -i $ICON_LOCK "Switching to Prisjakt VPN"
+        nmcli connection down se-mma-wg-004 && nmcli connection up Prisjakt
         ;;
 
-    "mullvad-se1-ikea")
-        echo "mullvad-se1-ikea found, switching to mullvad-se1"
+    "Prisjakt")
+        echo "Prisjakt found, switching to se-mma-wg-004"
+        notify-send -e -u normal -i $ICON_UNLOCK "Disconnect from VPN"
         # nmcli connection down mullvad-se1-ikea && nmcli connection up mullvad-se1
-        nmcli connection down mullvad-se1-ikea
+        nmcli connection down Prisjakt
         ;;
     *)
-        echo "none found, starting mullvad-se1"
-        nmcli connection up mullvad-se1
+        echo "none found, starting se-mma-wg-004"
+        notify-send -e -u normal -i $ICON_LOCK "Switching to Mullvad VPN"
+        nmcli connection up se-mma-wg-004
         ;;
 esac
 

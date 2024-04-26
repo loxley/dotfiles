@@ -105,7 +105,8 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 export EDITOR='nvim'
-export TERMINAL='/usr/bin/alacritty'
+#export TERMINAL='/usr/bin/alacritty'
+export TERMINAL='/usr/bin/kitty'
 
 export HISTORY_IGNORE="(l|ll|la|lt|ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export HISTSIZE=500000          # the number of items for the internal history list
@@ -152,8 +153,12 @@ export PATH="/home/loxley/gosdk/go1.17.7/bin:/home/loxley/go/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # vi/vim to nvim
-alias vi="lvim"
-alias vim="lvim"
+alias vi="nvim"
+alias vim="nvim"
+# helix to hx
+alias hx="helix"
+# lazygit
+alias lg="lazygit"
 
 # eza
 export EXA_GRID_ROWS=20
@@ -171,6 +176,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 #export BAT_THEME="Monokai Extended Origin"
 
+# kitty image viewer
 alias icat="kitten icat"
 
 # gcloud functions

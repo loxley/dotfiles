@@ -33,7 +33,8 @@
     "spacing": 4,
     "modules-left": [
       "hyprland/workspaces",
-      "custom/disk"
+      "custom/disk",
+      "custom/gmail"
     ],
     "modules-center": [
       "hyprland/window"
