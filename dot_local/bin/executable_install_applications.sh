@@ -75,7 +75,6 @@ apps=(
     "openbsd-netcat"                   # TCP/IP swiss army knife
     "nvm"                              # node version manager
     "nwg-look"                         #  GTK3 settings editor adapted to work on wlroots-based compositors
-    "pa-applet"                        # pulseaudio applet
     "pamixer"                          # pulseaudio command line mixer
     #"pavucontrol"                      # pulseaudio vol control
     "picom-git"                        # composito
@@ -170,3 +169,13 @@ test -f "${HOME}/.local/share/fonts/SauceCodeProNerdFontMono-SemiBoldItalic.ttf"
 #echo "Source Code Pro (SauceCodePro) Semibold Mono"
 #test -f "${HOME}/.local/share/fonts/Sauce Code Pro Semibold Nerd Font Complete Mono.ttf" || wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Semibold/complete/Sauce%20Code%20Pro%20Semibold%20Nerd%20Font%20Complete%20Mono.ttf -P ~/.local/share/fonts/
 
+echo "Installing (hypr)cursor"
+
+test -d "${HOME}/.local/share/icons/BreezeX-RosePine-Linux" || wget https://github.com/rose-pine/cursor/releases/download/v1.1.0/BreezeX-RosePine-Linux.tar.xz -P ~/.local/share/icons/
+test -d "${HOME}/.local/share/icons/BreezeX-RosePine-Linux" || tar -xvf ~/.local/share/icons/BreezeX-RosePine-Linux.tar.xz -C ~/.local/share/icons
+rm -f "${HOME}/.local/share/icons/BreezeX-RosePine-Linux.tar.xz"
+
+test -d "${HOME}/.local/share/icons/rose-pine-hyprcursor" || wget https://github.com/ndom91/rose-pine-hyprcursor/releases/download/v0.3.2/rose-pine-cursor-hyprcursor_0.3.2.tar.gz -P ~/.local/share/icons/
+test -d "${HOME}/.local/share/icons/rose-pine-hyprcursor" || mkdir -p ~/.local/share/icons/rose-pine-hyprcursor
+test -f "${HOME}/.local/share/icons/rose-pine-hyprcursor/manifest.hl" || tar zxvf ~/.local/share/icons/rose-pine-cursor-hyprcursor_0.3.2.tar.gz -C ~/.local/share/icons/rose-pine-hyprcursor
+rm -f ~/.local/share/icons/rose-pine-cursor-hyprcursor_0.3.2.tar.gz
