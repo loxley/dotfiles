@@ -40,3 +40,11 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+[".cache/themes/Qogir-theme"]
+    type = "git-repo"
+    url = "https://github.com/vinceliuice/Qogir-theme.git"
+    refreshPeriod = "168h"
+[".cache/themes/Tela-icon-theme"]
+    type = "git-repo"
+    url = "https://github.com/vinceliuice/Tela-icon-theme.git"
+    refreshPeriod = "168h"
