@@ -2,7 +2,8 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Iosevka NF;
+    /* font-family: Iosevka NF; */
+    font-family: Noto Color Emoji, Iosevka NF;
     min-height: 0;
 }
 window#waybar.DP-1 {
