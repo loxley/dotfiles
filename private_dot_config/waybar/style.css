@@ -3,11 +3,12 @@
     border: none;
     border-radius: 0;
     /* font-family: Iosevka NF; */
-    font-family: Noto Color Emoji, Iosevka NF;
+    /* font-family: Noto Color Emoji, Iosevka NF; */
+    font-family: Noto Sans Mono;
     min-height: 0;
 }
 window#waybar.DP-1 {
-    font-size: 12px;
+    font-size: 10px;
     opacity: 1.0;
     background: @background-darker;
     color: @foreground;
@@ -15,7 +16,7 @@ window#waybar.DP-1 {
     border-image: linear-gradient(to right, @background, @cyan) 1;
 }
 window#waybar.DP-2 {
-    font-size: 12px;
+    font-size: 10px;
     opacity: 1.0;
     background: @background-darker;
     color: @foreground;
@@ -36,7 +37,7 @@ tooltip {
     font-weight: bold;
 }
 #workspaces button {
-    font-size: 16px;
+    font-size: 14px;
     transition-property: all;
     transition-duration: 0.25s;
     padding: 0 10px;
@@ -44,23 +45,23 @@ tooltip {
 }
 #workspaces button:hover {
     background: transparent;
-    background-image: linear-gradient(0deg, @purple 7%, @background-darker 28%, rgba(0,0,0,0) 25%);
+    background-image: linear-gradient(0deg, @purple 7%, rgba(0,0,0,0) 18%);
 }
 #workspaces button.empty {
     color: #8796b0;
 }
 #workspaces button.visible {
-    background-image: linear-gradient(0deg, @purple 7%, @background-darker 18%, rgba(0,0,0,0) 25%);
+    background-image: linear-gradient(0deg, @purple 7%, rgba(0,0,0,0) 18%);
 }
 #workspaces button.active {
     color: #7cd380;
-    background-image: linear-gradient(0deg, @purple 7%, @background-darker 18%, rgba(0,0,0,0) 25%);
+    background-image: linear-gradient(0deg, @purple 7%, rgba(0,0,0,0) 18%);
 }
 #workspaces button.active:hover {
-    background-image: linear-gradient(0deg, @purple 7%, @background-darker 28%, rgba(0,0,0,0) 25%);
+    background-image: linear-gradient(0deg, @purple 7%, rgba(0,0,0,0) 43%);
 }
 #workspaces button.urgent {
-    background-image: linear-gradient(0deg, @red 7%, @background-darker 18%, rgba(0,0,0,0) 25%);
+    background-image: linear-gradient(0deg, @red 7%, rgba(0,0,0,0) 18%);
 }
 #taskbar button.active {
     background-image: linear-gradient(0deg, @selection, @background-darker);

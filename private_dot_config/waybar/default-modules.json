@@ -130,7 +130,7 @@
   	},
     //"title-len": 10,
   	"status-icons": {
-  		"paused": "⏸"
+  		"paused": " "
   	},
     "dynamic-order": [
       "title",
@@ -205,22 +205,25 @@
   },
   "custom/weather": {
     "format": "{}",
-    "format-alt": "{alt}: {}",
-    "format-alt-click": "click-right",
+    //"format-alt": "{alt}: {}",
+    //"format-alt-click": "click-right",
     "interval": 1800,
     "return-type": "json",
     //"exec": "~/.config/waybar/weather.sh Anderslöv",
-    "exec": "wttrbar --location Anderslöv --custom-indicator='{ICON}{temp_C}({FeelsLikeC})°C'",
+    "exec": "wttrbar --location Anderslöv --custom-indicator='{ICON} {temp_C}({FeelsLikeC})°C'",
     "exec-if": "ping wttr.in -c1"
   },
   "custom/disk": {
     "format": "{}",
-    "format-alt": "{alt}: {}",
+    //"format-alt": "{alt}: {}",
     "format-alt-click": "click-right",
+    "on-click": "xdg-open 'http://foobar.loxley.se:3000/grafana/d/rYdddlPWk/node-exporter-full?viewPanel=43&orgId=1&refresh=1m'",
+    "on-click-right": "notify-send -e -u normal 'Checking disk space'",
     "interval": 1800,
     "return-type": "json",
     "exec": "~/.config/waybar/disk.sh /srv/media",
-    "exec-if": "ping foobar.loxley.se -c1"
+    "exec-if": "ping foobar.loxley.se -c1",
+    "exec-on-event": true
   },
   "custom/gmail": {
     "format": "{}",
