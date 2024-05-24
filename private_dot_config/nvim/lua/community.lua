@@ -9,5 +9,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
+  { import = "astrocommunity.editing-support.chatgpt-nvim" },
   -- import/override with your plugins folder
 }

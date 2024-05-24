@@ -33,8 +33,9 @@
     "spacing": 4,
     "modules-left": [
       "hyprland/workspaces",
+      "custom/gmail",
       "custom/disk",
-      "custom/gmail"
+      "custom/archupdates"
     ],
     "modules-center": [
       "hyprland/window"
@@ -43,6 +44,20 @@
       "custom/vpn",
       "custom/weather",
       "clock"
+    ]
+  },
+  {
+    "name": "DP-4",
+    "include": [
+      "~/.config/waybar/default-modules.json",
+    ],
+    "output": "DP-4",
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 4,
+    "modules-center": [
+      "hyprland/window"
     ]
   }
 ]

@@ -147,7 +147,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # go path
-export PATH="/home/loxley/gosdk/go1.17.7/bin:/home/loxley/go/bin:$PATH"
+export PATH="/home/loxley/gosdk/go1.22.2/bin:/home/loxley/go/bin:$PATH"
 
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -175,6 +175,7 @@ alias less="bat --style=plain"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 #export BAT_THEME="Monokai Extended Origin"
+export GIT_PAGER="/usr/share/git/diff-highlight/diff-highlight | less " # lazygit reads GIT_PAGER, PAGER, .gitconfig
 
 # kitty image viewer
 alias icat="kitten icat"

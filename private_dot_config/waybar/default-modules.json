@@ -211,7 +211,7 @@
     "return-type": "json",
     //"exec": "~/.config/waybar/weather.sh Anderslöv",
     "exec": "wttrbar --location Anderslöv --custom-indicator='{ICON} {temp_C}({FeelsLikeC})°C'",
-    "exec-if": "ping wttr.in -c1"
+    //"exec-if": "ping wttr.in -c1"
   },
   "custom/disk": {
     "format": "{}",
@@ -234,7 +234,15 @@
     "interval": 300,
     "return-type": "json",
     "exec": "~/.config/waybar/mails.py",
-    "exec-if": "ping gmail.com -c1",
+    //"exec-if": "ping gmail.com -c1",
+    "exec-on-event": true
+  },
+  "custom/archupdates": {
+    "format": "{}",
+    "on-click-right": "notify-send -e -u normal 'Checking for updates'",
+    "interval": 7200,
+    "return-type": "json",
+    "exec": "~/.config/waybar/updates-aurhelper.sh",
     "exec-on-event": true
   },
   "image": {
