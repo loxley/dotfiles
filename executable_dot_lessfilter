@@ -1,5 +1,13 @@
 #! /usr/bin/env sh
 # this is a example of .lessfilter, you can change it
+dim=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}
+if [[ $dim = x ]]; then
+  dim=$(stty size < /dev/tty | awk '{print $2 "x" $1}')
+elif ! [[ $KITTY_WINDOW_ID ]] && (( FZF_PREVIEW_TOP + FZF_PREVIEW_LINES == $(stty size < /dev/tty | awk '{print $1}') )); then
+  # Avoid scrolling issue when the Sixel image touches the bottom of the screen
+  # * https://github.com/junegunn/fzf/issues/2544
+  dim=${FZF_PREVIEW_COLUMNS}x$((FZF_PREVIEW_LINES - 1))
+fi
 mime=$(file -bL --mime-type "$1")
 category=${mime%%/*}
 kind=${mime##*/}
@@ -7,7 +15,9 @@ if [ -d "$1" ]; then
 	#exa --git -hl --color=always --icons "$1"
     exa -al -snew --color=always --group-directories-first --git --tree --level=2 --no-user --no-time --no-permissions "$1"
 elif [ "$category" = image ]; then
-	chafa "$1"
+	#chafa -f symbols "$1"
+  #chafa -f symbol -s "$dim" "$1"A
+  kitty icat --clear --transfer-mode=memory --unicode-placeholder --stdin=no --place="$dim@0x0" "$1" | sed '$d' | sed $'$s/$/\e[m/'
 	#exiftool "$1"
 elif [ "$kind" = vnd.openxmlformats-officedocument.spreadsheetml.sheet ] || \
 	[ "$kind" = vnd.ms-excel ]; then
