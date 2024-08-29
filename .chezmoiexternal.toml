@@ -1,9 +1,3 @@
-[".config/awesome/bling"]
-    type = "archive"
-    url = "https://github.com/BlingCorp/bling/archive/refs/heads/master.zip"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
 [".oh-my-zsh"]
     type = "archive"
     url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
