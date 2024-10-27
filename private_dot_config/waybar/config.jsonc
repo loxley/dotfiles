@@ -34,8 +34,8 @@
     "modules-left": [
       "hyprland/workspaces",
       "custom/gmail",
-      "custom/disk",
-      "custom/archupdates"
+      "custom/archupdates",
+      "custom/disk"
     ],
     "modules-center": [
       "hyprland/window"
@@ -43,7 +43,8 @@
     "modules-right": [
       "custom/vpn",
       "custom/weather",
-      "clock"
+      "clock",
+      "tray"
     ]
   },
   {

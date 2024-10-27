@@ -58,9 +58,9 @@
     "format": "<span color='#ffcb8b'> {:%d %b %Y</span> <span color='#c792ea'> %R</span>}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  //"tray": {
-  //  "spacing": 4
-  //},
+  "tray": {
+    "spacing": 4
+  },
   //"custom/weather": {
   //  "exec": "~/.config/waybar/wittr.sh",
   //  "return-type": "json",
@@ -229,7 +229,7 @@
     "format": "{}",
     //"format-alt": "{}",
     "format-alt-click": "click-right",
-    "on-click": "xdg-open 'https://mail.google.com/mail/u/1/#inbox'",
+    "on-click": "xdg-open 'https://mail.google.com/mail/u/0/#inbox'",
     "on-click-right": "notify-send -e -u normal 'Checking for email'",
     "interval": 300,
     "return-type": "json",
