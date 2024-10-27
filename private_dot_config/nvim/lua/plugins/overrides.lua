@@ -1,10 +1,10 @@
 return {
-  {
-    "jackMort/ChatGPT.nvim",
-    opts = {
-      api_key_cmd = "gpg -d /home/loxley/openai_api_key.txt.asc"
-    }
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   opts = {
+  --     api_key_cmd = "gpg -d /home/loxley/openai_api_key.txt.asc"
+  --   }
+  -- },
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = { -- extend the plugin options
@@ -18,22 +18,22 @@ return {
         }
       }
     }
-  },
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts) -- override the options using lazy.nvim
-      opts.section.header.val = { -- change the header section value
-        " ▄▄▄· .▄▄ · ▄▄▄▄▄▄▄▄        ",
-        "▐█ ▀█ ▐█ ▀. •██  ▀▄ █·▪     ",
-        "▄█▀▀█ ▄▀▀▀█▄ ▐█.▪▐▀▀▄  ▄█▀▄ ",
-        "▐█ ▪▐▌▐█▄▪▐█ ▐█▌·▐█•█▌▐█▌.▐▌",
-        " ▀  ▀  ▀▀▀▀  ▀▀▀ .▀  ▀ ▀█▄▀▪",
-        " ▐ ▄  ▌ ▐·▪  • ▌ ▄ ·.       ",
-        "•█▌▐█▪█·█▌██ ·██ ▐███▪      ",
-        "▐█▐▐▌▐█▐█•▐█·▐█ ▌▐▌▐█·      ",
-        "██▐█▌ ███ ▐█▌██ ██▌▐█▌      ",
-        "▀▀ █▪. ▀  ▀▀▀▀▀  █▪▀▀▀      ",
-      }
-    end,
   }
+  -- {
+  --   "goolord/alpha-nvim",
+  --   opts = function(_, opts) -- override the options using lazy.nvim
+  --     opts.section.header.val = { -- change the header section value
+  --       " ▄▄▄· .▄▄ · ▄▄▄▄▄▄▄▄        ",
+  --       "▐█ ▀█ ▐█ ▀. •██  ▀▄ █·▪     ",
+  --       "▄█▀▀█ ▄▀▀▀█▄ ▐█.▪▐▀▀▄  ▄█▀▄ ",
+  --       "▐█ ▪▐▌▐█▄▪▐█ ▐█▌·▐█•█▌▐█▌.▐▌",
+  --       " ▀  ▀  ▀▀▀▀  ▀▀▀ .▀  ▀ ▀█▄▀▪",
+  --       " ▐ ▄  ▌ ▐·▪  • ▌ ▄ ·.       ",
+  --       "•█▌▐█▪█·█▌██ ·██ ▐███▪      ",
+  --       "▐█▐▐▌▐█▐█•▐█·▐█ ▌▐▌▐█·      ",
+  --       "██▐█▌ ███ ▐█▌██ ██▌▐█▌      ",
+  --       "▀▀ █▪. ▀  ▀▀▀▀▀  █▪▀▀▀      ",
+  --     }
+  --   end,
+  -- }
 }
