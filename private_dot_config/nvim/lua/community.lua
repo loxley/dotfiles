@@ -13,5 +13,7 @@ return {
   -- { import = "astrocommunity.colorscheme.nightfox-nvim" },
   -- { import = "astrocommunity.colorscheme.vim-moonfly-colors" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.editing-support.zen-mode-nvim" },
   -- { import = "astrocommunity.editing-support.chatgpt-nvim" },
 }

@@ -52,6 +52,7 @@ apps=(
     "hypridle"                         # hyprland’s idle daemon
     "hyprlock"                         # hyprland’s GPU-accelerated screen locking utility
     #"hypnotix"                         # iptv app
+    "jellyfin-media-player"            # jellyfin player
     "jq"                               # jq cli
     "jwt-cli"                          # decode/encode JWTs
     "neovim"                           # ditched vim for neovim
@@ -90,7 +91,7 @@ apps=(
     "rclone"                           # manage files on cloud storage
     "ripgrep"                          # recursive search on steroids
     "ristretto"                        # picture viewer
-    "rofi"                             # app launcher
+    "rofi-wayland"                     # app launcher
     "rtkit"                            # realtime policy and watchdog daemon control
     #"seahorse"                         # manage PGP keys
     "signal-desktop"                   # signal messenger
@@ -102,6 +103,7 @@ apps=(
     "sslscan"                          # sslscan tool to determine supported ciphers
     "starship"                         # starship prompt
     "step-cli"                         # plumbing for distributed systems
+    "swappy"                           # grab and edit on the fly snapshots of a wayland compositor
     "syncthing"                        # continuous replication / cluster synchronization thing
     "tailscale"                        # mesh vpn
     "thunar"                           # file manager
@@ -111,10 +113,13 @@ apps=(
     "unzip"                            # unzip
     "v4l-utils"                        # userspace tools for video 4 linux
     "visual-studio-code-bin"           # VS Code
+    "vivid"                            # LS_COLORS manager with multiple themes
     "waybar-cava-git"                  # waybar with cava support
+    "wev"                              # show wayland events
     "whois"                            # whois
     "wireguard-tools"                  # secure network tunnel - tools
     "wl-clipboard"                     # Command-line copy/paste utilities for Wayland
+    "wttrbar"                          # weather indicator for waybar
     "xclip"                            # clipboard
     "xdg-desktop-portal-hyprland"      # xdg-desktop-portal backend for hyprland
     "xdg-user-dirs"                # xdg-user-dirs

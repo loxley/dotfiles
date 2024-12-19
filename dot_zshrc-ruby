@@ -113,7 +113,6 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 export EDITOR='nvim'
-#export TERMINAL='/usr/bin/alacritty'
 export TERMINAL='/usr/bin/kitty'
 
 #[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
@@ -244,6 +243,8 @@ zstyle ':fzf-tab:*' fzf-flags '--height=25%'
 #zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat ${(Q)realpath} --color=always'
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 export LESSOPEN='|~/.lessfilter %s'
+
+eval "$(zoxide init --cmd cd zsh)"
 
 # start gnome-keyring-daemon and export SSH_AUTH_SOCK
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh)
